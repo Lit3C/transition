@@ -92,6 +92,9 @@
     .text1_1, .text1_2 {/*___________________CONTENU 1.2_____*/
       padding: 2% 5%;
     }
+.text1_1{
+height: 160px;
+}
     .button1, .button2{/*________________________BUTTON _____*/
       position: absolute;
       background-color: #120756;
@@ -399,9 +402,10 @@
               ************************************************************************************-->
     <script>
     var space = {x1:"&emsp;",x2:"&emsp;&emsp;", x3:"&emsp;&emsp;&emsp;", x4:"&emsp;&emsp;&emsp;&emsp;"};
-    var color = {red :"<span style=\"color:#C94C4C\">",
+    var color = {red :"<span style=\"color:#ED5F5F\">",
                  orange:"<span style=\"color:#EEB353\">",
-                 green:"",blue:"",
+                 green:"<span style=\"color:#9CE98D\">",
+                 blue:"<span style=\"color:#3AE6F5\">",
                  violet:"<span style=\"color:#B23ADD\">",close:"</span>"};
 
     var contenuText = document.getElementById("contenu");
@@ -443,10 +447,10 @@
     }
     function nextAgain(){console.log("nextAgain");
       contenuText.innerHTML="<p class=\"question\">Comment ça fonctionne ?</p>"+
-                            "<p class=\"text1_2\">Une transition est definie par trois propriété définir obligatoire les propriété consermé le temps de la"+
+                            "<p class=\"text1_1\">Une transition est definie par trois propriété définir obligatoire les propriété consermé le temps de la"+
                                                   "transition et le types de transition et undelai entre le changement état et la transition .Une transition"+
                                                   "écrit comme :</p>"+
-                            "<p class=\"text1_2\">Les propriété de la transition (transition­property: propriété css)"+
+                            "<p class=\"text1_1\">Les propriété de la transition (transition­property: propriété css)"+
                                                   "La durée (transition­duration:durée en s)"+
                                                   "le types (transition­timing­function: types de transition)"+
                                                   "le delai (transition­delay:durée en s)"+
@@ -503,24 +507,24 @@
 //___________________________________________________________________________________SUR CLICK BUTTON ROUGE_______________
 
     function afficheHTML(i){
-      var monTextHTML = ["<p><span style=\"color:red\">&#60; h2 &#62;</span> Languages informatiques front-ends &#60; /h2 &#62;</p>"+
-                          "<p>&#60; ul &#62;</p>"+
-                          "<p>"+space.x1+" &#60; li &#62;</p>"+
-                          "<p>"+space.x2+"&#60; a href=\"#\"&#62;</p>"+
-                          "<p>"+space.x3+"&#60; img src=\"jsl_0.png\" &#62;</p>"+
-                          "<p>"+space.x2+"&#60; /a &#62;</p>"+
-        /*  P  */         "<p>"+space.x1+"&#60; /li &#62;</p>"+
-        /*  A  */         "<p>"+space.x1+"&#60; li &#62;</p>"+
-        /*  R  */         "<p>"+space.x2+"&#60; a href=\"#\" &#62;</p>"+
-        /*  T  */         "<p>"+space.x3+"&#60; img src=\"html.png\" &#62;</p>"+
-        /*  I  */         "<p>"+space.x2+"&#60; /a &#62;</p>"+
-        /*  E  */         "<p>"+space.x1+"&#60; /li &#62;</p>"+
-                          "<p>"+space.x1+"&#60; li &#62;</p>"+
-        /*  1  */         "<p>"+space.x2+"&#60; a href=\"#\" &#62;</p>"+
-                          "<p>"+space.x3+"&#60; img src=\"css3.png\" &#62;</p>"+
-                          "<p>"+space.x2+"&#60; /a &#62;</p>"+
-                          "<p>"+space.x1+"&#60; /li &#62;</p>"+
-                          "<p>&#60; /ul &#62;</p>",
+      var monTextHTML = ["<p>&#60;"+color.red+"h2"+color.close+"&#62 Languages informatiques front-ends &#60;/"+color.red+"h2"+color.close+"&#62;</p>"+
+                          "<p>&#60;"+color.red+"ul"+color.close+"&#62;</p>"+
+                          "<p>"+space.x1+" &#60;"+color.red+"li"+color.close+"&#62;</p>"+
+                          "<p>"+space.x2+"&#60;"+color.red+"a"+color.close+" href=\"#\"&#62;</p>"+
+                          "<p>"+space.x3+"&#60;"+color.red+"img"+color.close+color.orange+" src"+color.close+"="+color.green+"\"jsl_0.png\""+color.close+" &#62;</p>"+
+                          "<p>"+space.x2+"&#60;/"+color.red+"a"+color.close+" &#62;</p>"+
+        /*  P  */         "<p>"+space.x1+"&#60;/"+color.red+"li"+color.close+" &#62;</p>"+
+        /*  A  */         "<p>"+space.x1+"&#60;"+color.red+"li"+color.close+" &#62;</p>"+
+        /*  R  */         "<p>"+space.x2+"&#60;"+color.red+"a"+color.close+" href=\"#\" &#62;</p>"+
+        /*  T  */         "<p>"+space.x3+"&#60;"+color.red+"img"+color.close+" src=\"html.png\" &#62;</p>"+
+        /*  I  */         "<p>"+space.x2+"&#60;/"+color.red+"a"+color.close+" &#62;</p>"+
+        /*  E  */         "<p>"+space.x1+"&#60;/"+color.red+"li"+color.close+" &#62;</p>"+
+                          "<p>"+space.x1+"&#60;"+color.red+"li"+color.close+" &#62;</p>"+
+        /*  1  */         "<p>"+space.x2+"&#60;"+color.red+"a"+color.close+" href=\"#\" &#62;</p>"+
+                          "<p>"+space.x3+"&#60;"+color.red+"img"+color.close+" src=\"css3.png\" &#62;</p>"+
+                          "<p>"+space.x2+"&#60;/"+color.red+"a"+color.close+" &#62;</p>"+
+                          "<p>"+space.x1+"&#60;/"+color.red+"li"+color.close+" &#62;</p>"+
+                          "<p>&#60;/"+color.red+"ul"+color.close+" &#62;</p>",
 
                           "<p>&#60; div &#62;</p>"+
                           "<p>&#60; p &#62;css3 forment un langage informatique qui decrit</p>"+
@@ -531,7 +535,7 @@
                           "<a href =\"https://github.com/simplon-linap/transition/archive/master.zip\" id=\"download\">"+// -----------CHANGER LIEN DE DOWNLOAD
                           "<p>Cliquez ici pour télécharger </p><p> le fichier HTML</p></a>"];
 
-      var explicationHTML = ["Dans une liste, créez 3 liens contenant chacun une image.",
+      var explicationHTML = ["Dans votre &#60;body&#62;&#60;/body&#62;,faites une liste. Dans cette liste, créez 3 liens contenant chacun une image.",
                          "A la suite de chaque image, créez sa légende dans une div et la consigne ensuite.",
                          "Aucune modification à cette étape :)"]
 
@@ -626,14 +630,14 @@
 
       var monText = monTextCSS[i-1];
 
-      var explicationCSS = ["blob", "blub","blab" ];
+      var explicationCSS = ["Définissez les dimensions, les coloris et les positions de chaque selecteurs (de manière basique).", "blub","blab" ];
       codeContent[i-1].innerHTML="<div class=\"codeContent\">"+
                                  "<p class=\"explication\">"+explicationCSS[i-1]+"</p>"+
                                  "<div class=\"scroll\" id=\"textScroll"+i+"\">"+monText+"</div></div>";
     }
 //___________________________________________________________________________________SUR CLICK BUTTON VERT_______________
     function afficheRENDU(i){
-      codeContent[i-1].innerHTML="";
+      codeContent[i-1].innerHTML="<embed width=\"100%\" height=\"60%\" src=\"etape1.html\"></embed>";
     }
     </script>
   </body>
