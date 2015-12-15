@@ -85,7 +85,7 @@
     }
     .question{/*_____________________________CONTENU 1.1_____*/
       color:#120756;
-      font-size: 2.5em;
+      font-size: 2.3em;
       font-weight: bold;
       padding: 1% 5%;
     }
@@ -287,14 +287,12 @@ height: 160px;
     }
     #download, #download:hover{
       text-align: center;
-      color: #FFF;
-      font-size: 2em;
       text-decoration: none;
+      color: #373737;
     }
     #download:hover{
-      font-size: 1.8em;
-      color:#BBAAF7;
-}
+      color: navy;
+    }
     </style>
   <body><!--***************************************************************************************
         |                                                                           HTML          |
@@ -325,7 +323,7 @@ height: 160px;
                               être faite en javascript mais il est plus simple de passer avec du CSS. La transition est presque toujours
                               déclenchée par un pseudo­class que nous vous expliquerons par la suite.
             </p>
-            <button class="button1" onclick="next()">suivant</button>
+            <button class="button1" onclick="next1()">suivant</button>
           </content>
         </div>
       </div>
@@ -401,7 +399,7 @@ height: 160px;
               |                                                                     JAVASCRIPT       |
               ************************************************************************************-->
     <script>
-    var space = {x1:"&emsp;",x2:"&emsp;&emsp;", x3:"&emsp;&emsp;&emsp;", x4:"&emsp;&emsp;&emsp;&emsp;"};
+    var space = {x1:"&emsp;",x2:"&emsp;&emsp;", x3:"&emsp;&emsp;&emsp;", x4:"&emsp;&emsp;&emsp;&emsp;", x5:"&emsp;&emsp;&emsp;&emsp;&emsp;"};
     var color = {red :"<span style=\"color:#ED5F5F\">",
                  orange:"<span style=\"color:#EEB353\">",
                  green:"<span style=\"color:#9CE98D\">",
@@ -410,7 +408,7 @@ height: 160px;
 
     var contenuText = document.getElementById("contenu");
 //___________________________________________________________________________________BUTTON NEXT 1_______________
-    function next(){
+    function next1(){
       contenuText.innerHTML="<p class=\"question\">Qu'est-ce que les \"pseudo-classes\" ?</p>"+
                             "<p class=\"text1_2\">Elle sont appelle comme ca car elle rappelle les class en javascript dans leurs ecrtures .les pseudo-"+
                                                   "class sont toujours précédé d'un élement et certaine entre elles prendrent des parametres"+
@@ -428,24 +426,11 @@ height: 160px;
                                                   "La pseudo class visited permet de modifier l'aspect d'un lien une fois que l'utilisateur l'a visité."+
                                                   "La pseudo class:not() prend un sélecteur comme argument. Elle sert à exclure les éléments qui ne"+
                                                   "sont pas concernés par le sélecteur en argument.</p>"+
-                            "<button class=\"button2\"onclick=\"previous()\">précédent</button>"+
-                            "<button class="+"\"button1\""+ "onclick="+"\"nextAgain()\""+">suivant</button>";
+                            "<button class=\"button2\"onclick=\"previous1()\">précédent</button>"+
+                            "<button class="+"\"button1\""+ "onclick="+"\"next2()\""+">suivant</button>";
 
     }
-//___________________________________________________________________________________BUTTON PREVIOUS 1_______________
-    function previous(){
-      contenuText.innerHTML="<p class=\"question\">Qu'est-ce qu'une transition ?</p>"+
-                            "<p class=\"text1_1\">Une transition est la gestion du passage d'un etat A à un etat B déclenché par une action utilisateur."+
-                                                  "C'est tout simplement le changement d'état progressif d'une propriété CSS d'un état"+
-                                                  "initial vers un état final voulu. La transition permet de dymamiser visuellement un site web. La"+
-                                                  "transition met en valeur les actions utilisateurs en les rendant dynamiques.</p>"+
-                            "<p class=\"text1_1\">La transition peut se rapporcher d'une transformation utilisée par la propriété \"transform\", qui permet"+
-                                                  "de faire entre autre des rotations (mais nous en parlerons pas car peu utilisé) .La transition peut également"+
-                                                  "être faite en javascript mais il est plus simple de passer avec du CSS. La transition est presque toujours"+
-                                                  "déclenchée par un pseudo­class que nous vous expliquerons par la suite.</p>"+
-                            "<button class=\"button1\"onclick=\"next()\">suivant</button>";
-    }
-    function nextAgain(){console.log("nextAgain");
+    function next2(){console.log("nextAgain");
       contenuText.innerHTML="<p class=\"question\">Comment ça fonctionne ?</p>"+
                             "<p class=\"text1_1\">Une transition est definie par trois propriété définir obligatoire les propriété consermé le temps de la"+
                                                   "transition et le types de transition et undelai entre le changement état et la transition .Une transition"+
@@ -456,11 +441,30 @@ height: 160px;
                                                   "le delai (transition­delay:durée en s)"+
                                                   "elles peuvent etre regroupée dans une propriété transition qui écrit come ca :"+
                                                   "transition propriété durée type delai</p>"+
-                            "<button class=\"button2\"onclick=\"previousAgain()\">précédent</button>"+
-                            "<button class="+"\"button1\""+ "onclick="+"\"previous()\""+">retour</button>";
+                            "<button class=\"button2\"onclick=\"previous2()\">précédent</button>"+
+                            "<button class="+"\"button1\""+ "onclick="+"\"next3()\""+">suivant</button>";
+    }
+    function next3(){console.log("nextAgain");
+      contenuText.innerHTML="<p class=\"question\">Maintenant découvrez comment faire une gallerie d'image avec des transitions !</p>"+
+                            "<p><embed width=\"100%\" height=\"100%\" src=\"tutoTransition.html\"></embed></p>"+
+                            "<button class=\"button2\"onclick=\"previous3()\">précédent</button>"+
+                            "<button class="+"\"button1\""+ "onclick="+"\"previous1()\""+">retour</button>";
+    }
+//___________________________________________________________________________________BUTTON PREVIOUS 1_______________
+    function previous1(){
+      contenuText.innerHTML="<p class=\"question\">Qu'est-ce qu'une transition ?</p>"+
+                            "<p class=\"text1_1\">Une transition est la gestion du passage d'un etat A à un etat B déclenché par une action utilisateur."+
+                                                  "C'est tout simplement le changement d'état progressif d'une propriété CSS d'un état"+
+                                                  "initial vers un état final voulu. La transition permet de dymamiser visuellement un site web. La"+
+                                                  "transition met en valeur les actions utilisateurs en les rendant dynamiques.</p>"+
+                            "<p class=\"text1_1\">La transition peut se rapporcher d'une transformation utilisée par la propriété \"transform\", qui permet"+
+                                                  "de faire entre autre des rotations (mais nous en parlerons pas car peu utilisé) .La transition peut également"+
+                                                  "être faite en javascript mais il est plus simple de passer avec du CSS. La transition est presque toujours"+
+                                                  "déclenchée par un pseudo­class que nous vous expliquerons par la suite.</p>"+
+                            "<button class=\"button1\"onclick=\"next1()\">suivant</button>";
     }
 
-    function previousAgain(){
+    function previous2(){
       contenuText.innerHTML="<p class=\"question\">Qu'est-ce que les \"pseudo-classes\" ?</p>"+
                             "<p class=\"text1_2\">Elle sont appelle comme ca car elle rappelle les class en javascript dans leurs ecrtures .les pseudo-"+
                                                   "class sont toujours précédé d'un élement et certaine entre elles prendrent des parametres"+
@@ -478,11 +482,24 @@ height: 160px;
                                                   "La pseudo class visited permet de modifier l'aspect d'un lien une fois que l'utilisateur l'a visité."+
                                                   "La pseudo class:not() prend un sélecteur comme argument. Elle sert à exclure les éléments qui ne"+
                                                   "sont pas concernés par le sélecteur en argument.</p>"+
-                            "<button class=\"button2\"onclick=\"previous()\">précédent</button>"+
-                            "<button class="+"\"button1\""+ "onclick="+"\"nextAgain()\""+">suivant</button>";
+                            "<button class=\"button2\"onclick=\"previous1()\">précédent</button>"+
+                            "<button class="+"\"button1\""+ "onclick="+"\"next2()\""+">suivant</button>";
 
     }
-
+    function previous3(){
+      contenuText.innerHTML="<p class=\"question\">Comment ça fonctionne ?</p>"+
+                            "<p class=\"text1_1\">Une transition est definie par trois propriété définir obligatoire les propriété consermé le temps de la"+
+                                                  "transition et le types de transition et undelai entre le changement état et la transition .Une transition"+
+                                                  "écrit comme :</p>"+
+                            "<p class=\"text1_1\">Les propriété de la transition (transition­property: propriété css)"+
+                                                  "La durée (transition­duration:durée en s)"+
+                                                  "le types (transition­timing­function: types de transition)"+
+                                                  "le delai (transition­delay:durée en s)"+
+                                                  "elles peuvent etre regroupée dans une propriété transition qui écrit come ca :"+
+                                                  "transition propriété durée type delai</p>"+
+                            "<button class=\"button2\"onclick=\"previous2()\">précédent</button>"+
+                            "<button class="+"\"button1\""+ "onclick="+"\"next3()\""+">suivant</button>";
+    }
 //___________________________________________________________________________________SUR CLICK GHOST_______________
     function afficheStep(){
       var etape1 = document.getElementById("number1");
@@ -510,34 +527,102 @@ height: 160px;
       var monTextHTML = ["<p>&#60;"+color.red+"h2"+color.close+"&#62 Languages informatiques front-ends &#60;/"+color.red+"h2"+color.close+"&#62;</p>"+
                           "<p>&#60;"+color.red+"ul"+color.close+"&#62;</p>"+
                           "<p>"+space.x1+" &#60;"+color.red+"li"+color.close+"&#62;</p>"+
-                          "<p>"+space.x2+"&#60;"+color.red+"a"+color.close+" href=\"#\"&#62;</p>"+
-                          "<p>"+space.x3+"&#60;"+color.red+"img"+color.close+color.orange+" src"+color.close+"="+color.green+"\"jsl_0.png\""+color.close+" &#62;</p>"+
+                          "<p>"+space.x2+"&#60;"+color.red+"a"+color.close+color.orange+" href"+color.close+"="+color.green+"\"#\""+color.close+"&#62;</p>"+
+                          "<p>"+space.x3+"&#60;"+color.red+"img"+color.close+color.orange+" src"+color.close+"="+color.green+"\"js.png\""+color.close+" &#62;</p>"+
                           "<p>"+space.x2+"&#60;/"+color.red+"a"+color.close+" &#62;</p>"+
         /*  P  */         "<p>"+space.x1+"&#60;/"+color.red+"li"+color.close+" &#62;</p>"+
         /*  A  */         "<p>"+space.x1+"&#60;"+color.red+"li"+color.close+" &#62;</p>"+
-        /*  R  */         "<p>"+space.x2+"&#60;"+color.red+"a"+color.close+" href=\"#\" &#62;</p>"+
-        /*  T  */         "<p>"+space.x3+"&#60;"+color.red+"img"+color.close+" src=\"html.png\" &#62;</p>"+
+        /*  R  */         "<p>"+space.x2+"&#60;"+color.red+"a"+color.close+color.orange+" href"+color.close+"="+color.green+"\"#\""+color.close+"&#62;</p>"+
+        /*  T  */         "<p>"+space.x3+"&#60;"+color.red+"img"+color.close+color.orange+" src"+color.close+"="+color.green+"\"html.png\""+color.close+" &#62;</p>"+
         /*  I  */         "<p>"+space.x2+"&#60;/"+color.red+"a"+color.close+" &#62;</p>"+
         /*  E  */         "<p>"+space.x1+"&#60;/"+color.red+"li"+color.close+" &#62;</p>"+
                           "<p>"+space.x1+"&#60;"+color.red+"li"+color.close+" &#62;</p>"+
-        /*  1  */         "<p>"+space.x2+"&#60;"+color.red+"a"+color.close+" href=\"#\" &#62;</p>"+
-                          "<p>"+space.x3+"&#60;"+color.red+"img"+color.close+" src=\"css3.png\" &#62;</p>"+
+        /*  1  */         "<p>"+space.x2+"&#60;"+color.red+"a"+color.close+color.orange+" href"+color.close+"="+color.green+"\"#\""+color.close+"&#62;</p>"+
+                          "<p>"+space.x3+"&#60;"+color.red+"img"+color.close+color.orange+" src"+color.close+"="+color.green+"\"css3.png\""+color.close+" &#62;</p>"+
                           "<p>"+space.x2+"&#60;/"+color.red+"a"+color.close+" &#62;</p>"+
                           "<p>"+space.x1+"&#60;/"+color.red+"li"+color.close+" &#62;</p>"+
                           "<p>&#60;/"+color.red+"ul"+color.close+" &#62;</p>",
 
-                          "<p>&#60; div &#62;</p>"+
-                          "<p>&#60; p &#62;css3 forment un langage informatique qui decrit</p>"+
-                          "<p>la presentation des documents HTML et XML&#60; /p &#62;</p>"+
-                          "<p>&#60; /div &#62;</p>"+
-                          "<p>&#60; p &#62;survolez-moi pour en savoir plus&#60; /p &#62;</p>",
+                          "<span style=\"color:grey\"><p>&#60;h2&#62 Languages informatiques front-ends &#60;/h2&#62;</p>"+
+                          "<p>&#60;ul&#62;</p>"+
+                          "<p>"+space.x1+"&#60;li&#62;</p>"+
+                          "<p>"+space.x2+"&#60;a href=\"#\"&#62;</p>"+
+                          "<p>"+space.x3+"&#60;img src=\"js.png\"&#62;</p></span>"+
+               /* new */  "<p>"+space.x3+"&#60;"+color.red+"div"+color.close+"&#62;</p>"+
+               /* new */  "<p>"+space.x4+"&#60;"+color.red+"p"+color.close+"&#62;JavaScript est un langage de </p>"+
+               /* new */  "<p>"+space.x5+"programmation de scripts principalement</p>"+
+               /* new */  "<p>"+space.x5+"employé dans les pages web interactives</p>"+
+               /* new */  "<p>"+space.x5+"mais aussi pour les serveurs</p>"+
+               /* new */  "<p>"+space.x4+"&#60;/"+color.red+"p"+color.close+"&#62;</p>"+
+               /* new */  "<p>"+space.x3+"&#60;/"+color.red+"div"+color.close+"&#62;</p>"+
+               /* new */  "<p>"+space.x3+"&#60;"+color.red+"p"+color.close+"&#62;survolez-moi pour en savoir plus&#60;/"+color.red+"p"+color.close+"&#62;</p>"+
+                          "<span style=\"color:grey\"><p>"+space.x2+"&#60;/a&#62;</p>"+
+                          "<p>"+space.x1+"&#60;/li&#62;</p>"+
+                          "<p>"+space.x1+"&#60;li&#62;</p>"+
+                          "<p>"+space.x2+"&#60;a href=\"#\"&#62;</p>"+
+                          "<p>"+space.x3+"&#60;img src=\"html.png\" &#62;</p></span>"+
+               /* new */  "<p>"+space.x3+"&#60;"+color.red+"div"+color.close+"&#62;</p>"+
+               /* new */  "<p>"+space.x4+"&#60;"+color.red+"p"+color.close+"&#62;HTML est le format de donnees concu</p>"+
+               /* new */  "<p>"+space.x5+"pour representer les pages web.&#60;/"+color.red+"p"+color.close+"&#62;</p>"+
+               /* new */  "<p>"+space.x3+"&#60;/"+color.red+"div"+color.close+"&#62;</p>"+
+               /* new */  "<p>"+space.x3+"&#60;"+color.red+"p"+color.close+"&#62;survolez-moi pour en savoir plus&#60;/"+color.red+"p"+color.close+"&#62;</p>"+
+                          "<span style=\"color:grey\"><p>"+space.x2+"&#60;/a &#62;</p>"+
+                          "<p>"+space.x1+"&#60;/li &#62;</p>"+
+                          "<p>"+space.x1+"&#60;li &#62;</p>"+
+                          "<p>"+space.x2+"&#60;a href=\"#\"&#62;</p>"+
+                          "<p>"+space.x3+"&#60;img src=\"css3.png\" &#62;</p></span>"+
+               /* new */  "<p>"+space.x3+"&#60;"+color.red+"div"+color.close+"&#62;</p>"+
+               /* new */  "<p>"+space.x4+"&#60;"+color.red+"p"+color.close+"&#62;css3 forment un langage informatique</p>"+
+               /* new */  "<p>"+space.x5+"qui décrit la presentation des documents </p>"+
+               /* new */  "<p>"+space.x5+"HTML et XML&#60;/"+color.red+"p"+color.close+"&#62;</p>"+
+               /* new */  "<p>"+space.x3+"&#60;/"+color.red+"div"+color.close+"&#62;</p>"+
+               /* new */  "<p>"+space.x3+"&#60;"+color.red+"p"+color.close+"&#62;survolez-moi pour en savoir plus&#60;/"+color.red+"p"+color.close+"&#62;</p>"+
+                          "<span style=\"color:grey\"><p>"+space.x2+"&#60;/a&#62;</p>"+
+                          "<p>"+space.x1+"&#60;/li&#62;</p>"+
+                          "<p>&#60;/ul&#62;</p></span>",
 
-                          "<a href =\"https://github.com/simplon-linap/transition/archive/master.zip\" id=\"download\">"+// -----------CHANGER LIEN DE DOWNLOAD
-                          "<p>Cliquez ici pour télécharger </p><p> le fichier HTML</p></a>"];
+                          "<span style=\"color:grey\"><p>&#60;h2&#62 Languages informatiques front-ends &#60;/h2&#62;</p>"+
+                          "<p>&#60;ul&#62;</p>"+
+                          "<p>"+space.x1+"&#60;li&#62;</p>"+
+                          "<p>"+space.x2+"&#60;a href=\"#\"&#62;</p>"+
+                          "<p>"+space.x3+"&#60;img src=\"js.png\"&#62;</p>"+
+                          "<p>"+space.x3+"&#60;div&#62;</p>"+
+                          "<p>"+space.x4+"&#60;p&#62;JavaScript est un langage de </p>"+
+                          "<p>"+space.x5+"programmation de scripts principalement</p>"+
+                          "<p>"+space.x5+"employé dans les pages web interactives</p>"+
+                          "<p>"+space.x5+"mais aussi pour les serveurs</p>"+
+                          "<p>"+space.x4+"&#60;/p&#62;</p>"+
+                          "<p>"+space.x3+"&#60;/div&#62;</p>"+
+                          "<p>"+space.x3+"&#60;p&#62;survolez-moi pour en savoir plus&#60;/p&#62;</p>"+
+                          "<p>"+space.x2+"&#60;/a&#62;</p>"+
+                          "<p>"+space.x1+"&#60;/li&#62;</p>"+
+                          "<p>"+space.x1+"&#60;li&#62;</p>"+
+                          "<p>"+space.x2+"&#60;a href=\"#\"&#62;</p>"+
+                          "<p>"+space.x3+"&#60;img src=\"html.png\" &#62;</p>"+
+                          "<p>"+space.x3+"&#60;div&#62;</p>"+
+                          "<p>"+space.x4+"&#60;p&#62;HTML est le format de donnees concu</p>"+
+                          "<p>"+space.x5+"pour representer les pages web.&#60;/p&#62;</p>"+
+                          "<p>"+space.x3+"&#60;/p&#62;</p>"+
+                          "<p>"+space.x3+"&#60;p&#62;survolez-moi pour en savoir plus&#60;/p&#62;</p>"+
+                          "<p>"+space.x2+"&#60;/a &#62;</p>"+
+                          "<p>"+space.x1+"&#60;/li &#62;</p>"+
+                          "<p>"+space.x1+"&#60;li &#62;</p>"+
+                          "<p>"+space.x2+"&#60;a href=\"#\"&#62;</p>"+
+                          "<p>"+space.x3+"&#60;img src=\"css3.png\" &#62;</p>"+
+                          "<p>"+space.x3+"&#60;div&#62;</p>"+
+                          "<p>"+space.x4+"&#60;p&#62;css3 forment un langage informatique</p>"+
+                          "<p>"+space.x5+"qui décrit la presentation des documents </p>"+
+                          "<p>"+space.x5+"HTML et XML&#60;/p&#62;</p>"+
+                          "<p>"+space.x3+"&#60;/div&#62;</p>"+
+                          "<p>"+space.x3+"&#60;p&#62;survolez-moi pour en savoir plus&#60;/p&#62;</p>"+
+                          "<p>"+space.x2+"&#60;/a&#62;</p>"+
+                          "<p>"+space.x1+"&#60;/li&#62;</p>"+
+                          "<p>&#60;/ul&#62;</p></span>"];
 
       var explicationHTML = ["Dans votre &#60;body&#62;&#60;/body&#62;,faites une liste. Dans cette liste, créez 3 liens contenant chacun une image.",
                          "A la suite de chaque image, créez sa légende dans une div et la consigne ensuite.",
-                         "Aucune modification à cette étape :)"]
+                         "<a href =\"https://github.com/simplon-linap/transition/archive/master.zip\" id=\"download\">"+// -----------CHANGER LIEN DE DOWNLOAD
+                         "Cliquez ici pour télécharger le dossier .zip du tuto :)</a>"];
 
       var monText = monTextHTML[i-1];
       codeContent[i-1].innerHTML="<div class=\"codeContent\">"+
@@ -558,30 +643,30 @@ height: 160px;
                         "<p>"+space.x1+"margin: "+color.orange+"0px"+color.close+";</p>"+
                         "<p>"+space.x1+"box-sizing: content-box;</p>"+
                         "<p>}</p>"+
-                        "<p>h2 {</p>"+
-                        "<p>"+space.x1+"color: white;</p>"+
-                        "<p>"+space.x1+"background-color: gray;</p>"+
+                        "<p>"+color.red+"h2"+color.close+" {</p>"+
+                        "<p>"+space.x1+"color: "+color.orange+"white"+color.close+";</p>"+
+                        "<p>"+space.x1+"background-color: "+color.orange+"grey"+color.close+";</p>"+
                         "<p>"+space.x1+"text-align: center;</p>"+
                         "<p>}</p>"+
-                        "<p>li {</p>"+
+                        "<p>"+color.red+"li"+color.close+" {</p>"+
                         "<p>"+space.x1+"display: inline-flex;</p>"+
-                        "<p>"+space.x1+"width:400px;</p>"+
-                        "<p>"+space.x1+"height:400px;</p>"+
+                        "<p>"+space.x1+"width:"+color.orange+" 400px"+color.close+";</p>"+
+                        "<p>"+space.x1+"height:"+color.orange+" 400px;"+color.close+"</p>"+
                         "<p>"+space.x1+"list-style:none;</p>"+
                         "<p>}</p>"+
-                        "<p>li:hover{</p>"+
-                        "<p>"+space.x1+"width: 400px;</p>"+
-                        "<p>"+space.x1+"height:300px;</p>"+
+                        "<p>"+color.red+"li"+color.close+color.orange+":hover"+color.close+"{</p>"+
+                        "<p>"+space.x1+"width: "+color.orange+"400px"+color.close+";</p>"+
+                        "<p>"+space.x1+"height:"+color.orange+" 300px"+color.close+";</p>"+
                         "<p>}</p>"+
-                        "<p>a {</p>"+
-                        "<p>"+space.x1+"width:300px;height:350px;</p>"+
+                        "<p>"+color.red+"a"+color.close+" {</p>"+
+                        "<p>"+space.x1+"width:"+color.orange+"300px"+color.close+";height:"+color.orange+"350px"+color.close+";</p>"+
                         "<p>"+space.x1+"flex-direction: row;</p>"+
                         "<p>"+space.x1+"flex-flow: row;</p>"+
                         "<p>"+space.x1+"text-align: center;</p>"+
                         "<p>"+space.x1+"text-decoration: none;</p>"+
                         "<p>}</p>"+
-                        "<p>img {</p>"+
-                        "<p>"+space.x1+"width:200px;height:300px;</p>"+
+                        "<p>"+color.red+"img"+color.close+" {</p>"+
+                        "<p>"+space.x1+"width: "+color.orange+"200px"+color.close+";height: "+color.orange+"300px"+color.close+";</p>"+
                         "<p>}</p>",
 
                         "<p>ul li a:hover{</p>"+
@@ -630,14 +715,22 @@ height: 160px;
 
       var monText = monTextCSS[i-1];
 
-      var explicationCSS = ["Définissez les dimensions, les coloris et les positions de chaque selecteurs (de manière basique).", "blub","blab" ];
+      var explicationCSS = ["Définissez les dimensions, les coloris et les positions de chaque selecteurs (de manière basique).",
+                            "blub",
+                            "<a href =\"https://github.com/simplon-linap/transition/archive/master.zip\" id=\"download\">"+// -----------CHANGER LIEN DE DOWNLOAD
+                            "Cliquez ici pour télécharger le dossier .zip du tuto :)</a>" ];
+
       codeContent[i-1].innerHTML="<div class=\"codeContent\">"+
                                  "<p class=\"explication\">"+explicationCSS[i-1]+"</p>"+
                                  "<div class=\"scroll\" id=\"textScroll"+i+"\">"+monText+"</div></div>";
     }
 //___________________________________________________________________________________SUR CLICK BUTTON VERT_______________
     function afficheRENDU(i){
-      codeContent[i-1].innerHTML="<embed width=\"100%\" height=\"60%\" src=\"etape1.html\"></embed>";
+      var contentEmbed = ["<embed width=\"100%\" height=\"60%\" src=\"etape1.html\"></embed>",
+                      "<embed width=\"100%\" height=\"60%\" src=\"etape2.html\"></embed>",
+                      "<embed width=\"100%\" height=\"60%\" src=\"etape3.html\"></embed>"];
+      var monEmbed = contentEmbed[i-1];
+      codeContent[i-1].innerHTML= monEmbed;
     }
     </script>
   </body>
