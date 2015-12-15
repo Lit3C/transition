@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Tutoriel TRANSITION</title>
+    <link rel="icon" type="image/png" href="ghost.png" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
   </head><!--**************************************************************************************
         |                                                                           CSS          |
@@ -521,7 +522,7 @@ height: 160px;
                        document.getElementById("contenu2_2"),
                        document.getElementById("contenu2_3")];
 
-//___________________________________________________________________________________SUR CLICK BUTTON ROUGE_______________
+//___________________________________________________________________________________SUR CLICK BUTTON ROUGE HTML_______________
 
     function afficheHTML(i){
       var monTextHTML = ["<p>&#60;"+color.red+"h2"+color.close+"&#62 Languages informatiques front-ends &#60;/"+color.red+"h2"+color.close+"&#62;</p>"+
@@ -530,20 +531,23 @@ height: 160px;
                           "<p>"+space.x2+"&#60;"+color.red+"a"+color.close+color.orange+" href"+color.close+"="+color.green+"\"#\""+color.close+"&#62;</p>"+
                           "<p>"+space.x3+"&#60;"+color.red+"img"+color.close+color.orange+" src"+color.close+"="+color.green+"\"js.png\""+color.close+" &#62;</p>"+
                           "<p>"+space.x2+"&#60;/"+color.red+"a"+color.close+" &#62;</p>"+
-        /*  P  */         "<p>"+space.x1+"&#60;/"+color.red+"li"+color.close+" &#62;</p>"+
-        /*  A  */         "<p>"+space.x1+"&#60;"+color.red+"li"+color.close+" &#62;</p>"+
-        /*  R  */         "<p>"+space.x2+"&#60;"+color.red+"a"+color.close+color.orange+" href"+color.close+"="+color.green+"\"#\""+color.close+"&#62;</p>"+
-        /*  T  */         "<p>"+space.x3+"&#60;"+color.red+"img"+color.close+color.orange+" src"+color.close+"="+color.green+"\"html.png\""+color.close+" &#62;</p>"+
-        /*  I  */         "<p>"+space.x2+"&#60;/"+color.red+"a"+color.close+" &#62;</p>"+
-        /*  E  */         "<p>"+space.x1+"&#60;/"+color.red+"li"+color.close+" &#62;</p>"+
+                          "<p>"+space.x1+"&#60;/"+color.red+"li"+color.close+" &#62;</p>"+
+/*  E  */                 "<p>"+space.x1+"&#60;"+color.red+"li"+color.close+" &#62;</p>"+
+/*  T  */                 "<p>"+space.x2+"&#60;"+color.red+"a"+color.close+color.orange+" href"+color.close+"="+color.green+"\"#\""+color.close+"&#62;</p>"+
+/*  A  */                 "<p>"+space.x3+"&#60;"+color.red+"img"+color.close+color.orange+" src"+color.close+"="+color.green+"\"html.png\""+color.close+" &#62;</p>"+
+/*  P  */                 "<p>"+space.x2+"&#60;/"+color.red+"a"+color.close+" &#62;</p>"+
+/*  E  */                 "<p>"+space.x1+"&#60;/"+color.red+"li"+color.close+" &#62;</p>"+
                           "<p>"+space.x1+"&#60;"+color.red+"li"+color.close+" &#62;</p>"+
-        /*  1  */         "<p>"+space.x2+"&#60;"+color.red+"a"+color.close+color.orange+" href"+color.close+"="+color.green+"\"#\""+color.close+"&#62;</p>"+
+/*  1  */                 "<p>"+space.x2+"&#60;"+color.red+"a"+color.close+color.orange+" href"+color.close+"="+color.green+"\"#\""+color.close+"&#62;</p>"+
                           "<p>"+space.x3+"&#60;"+color.red+"img"+color.close+color.orange+" src"+color.close+"="+color.green+"\"css3.png\""+color.close+" &#62;</p>"+
                           "<p>"+space.x2+"&#60;/"+color.red+"a"+color.close+" &#62;</p>"+
                           "<p>"+space.x1+"&#60;/"+color.red+"li"+color.close+" &#62;</p>"+
                           "<p>&#60;/"+color.red+"ul"+color.close+" &#62;</p>",
 
-                          "<span style=\"color:grey\"><p>&#60;h2&#62 Languages informatiques front-ends &#60;/h2&#62;</p>"+
+                          "<span style=\"color:grey\"><p>&#60;h2&#62 Languages informatiques front-ends</p></span>"+
+                          "<p>"+space.x1+"&#60;"+color.red+"span"+color.close+"&#62 front-ends peut designer une interface de </p>"+
+                          "<p>"+space.x1+"communication entre plusieurs applications &#60;/"+color.red+"span"+color.close+"&#62</p>"+
+                          "<span style=\"color:grey\"><p>&#60;/h2&#62;</p>"+
                           "<p>&#60;ul&#62;</p>"+
                           "<p>"+space.x1+"&#60;li&#62;</p>"+
                           "<p>"+space.x2+"&#60;a href=\"#\"&#62;</p>"+
@@ -557,13 +561,13 @@ height: 160px;
                /* new */  "<p>"+space.x3+"&#60;/"+color.red+"div"+color.close+"&#62;</p>"+
                /* new */  "<p>"+space.x3+"&#60;"+color.red+"p"+color.close+"&#62;survolez-moi pour en savoir plus&#60;/"+color.red+"p"+color.close+"&#62;</p>"+
                           "<span style=\"color:grey\"><p>"+space.x2+"&#60;/a&#62;</p>"+
-                          "<p>"+space.x1+"&#60;/li&#62;</p>"+
-                          "<p>"+space.x1+"&#60;li&#62;</p>"+
-                          "<p>"+space.x2+"&#60;a href=\"#\"&#62;</p>"+
-                          "<p>"+space.x3+"&#60;img src=\"html.png\" &#62;</p></span>"+
-               /* new */  "<p>"+space.x3+"&#60;"+color.red+"div"+color.close+"&#62;</p>"+
+/*  E  */                 "<p>"+space.x1+"&#60;/li&#62;</p>"+
+/*  T  */                 "<p>"+space.x1+"&#60;li&#62;</p>"+
+/*  A  */                 "<p>"+space.x2+"&#60;a href=\"#\"&#62;</p>"+
+/*  P  */                 "<p>"+space.x3+"&#60;img src=\"html.png\" &#62;</p></span>"+
+/*  E  */      /* new */  "<p>"+space.x3+"&#60;"+color.red+"div"+color.close+"&#62;</p>"+
                /* new */  "<p>"+space.x4+"&#60;"+color.red+"p"+color.close+"&#62;HTML est le format de donnees concu</p>"+
-               /* new */  "<p>"+space.x5+"pour representer les pages web.&#60;/"+color.red+"p"+color.close+"&#62;</p>"+
+/*  2  */      /* new */  "<p>"+space.x5+"pour representer les pages web.&#60;/"+color.red+"p"+color.close+"&#62;</p>"+
                /* new */  "<p>"+space.x3+"&#60;/"+color.red+"div"+color.close+"&#62;</p>"+
                /* new */  "<p>"+space.x3+"&#60;"+color.red+"p"+color.close+"&#62;survolez-moi pour en savoir plus&#60;/"+color.red+"p"+color.close+"&#62;</p>"+
                           "<span style=\"color:grey\"><p>"+space.x2+"&#60;/a &#62;</p>"+
@@ -581,7 +585,10 @@ height: 160px;
                           "<p>"+space.x1+"&#60;/li&#62;</p>"+
                           "<p>&#60;/ul&#62;</p></span>",
 
-                          "<span style=\"color:grey\"><p>&#60;h2&#62 Languages informatiques front-ends &#60;/h2&#62;</p>"+
+                          "<span style=\"color:grey\"><p>&#60;h2&#62 Languages informatiques front-ends</p>"+
+                          "<p>"+space.x1+"&#60;span&#62 front-ends peut designer une interface de </p>"+
+                          "<p>"+space.x1+"communication entre plusieurs applications &#60;/span&#62</p>"+
+                          "<p>&#60;/h2&#62;</p>"+
                           "<p>&#60;ul&#62;</p>"+
                           "<p>"+space.x1+"&#60;li&#62;</p>"+
                           "<p>"+space.x2+"&#60;a href=\"#\"&#62;</p>"+
@@ -595,13 +602,13 @@ height: 160px;
                           "<p>"+space.x3+"&#60;/div&#62;</p>"+
                           "<p>"+space.x3+"&#60;p&#62;survolez-moi pour en savoir plus&#60;/p&#62;</p>"+
                           "<p>"+space.x2+"&#60;/a&#62;</p>"+
-                          "<p>"+space.x1+"&#60;/li&#62;</p>"+
-                          "<p>"+space.x1+"&#60;li&#62;</p>"+
-                          "<p>"+space.x2+"&#60;a href=\"#\"&#62;</p>"+
-                          "<p>"+space.x3+"&#60;img src=\"html.png\" &#62;</p>"+
-                          "<p>"+space.x3+"&#60;div&#62;</p>"+
+/*  E  */                 "<p>"+space.x1+"&#60;/li&#62;</p>"+
+/*  T  */                 "<p>"+space.x1+"&#60;li&#62;</p>"+
+/*  A  */                 "<p>"+space.x2+"&#60;a href=\"#\"&#62;</p>"+
+/*  P  */                 "<p>"+space.x3+"&#60;img src=\"html.png\" &#62;</p>"+
+/*  E  */                 "<p>"+space.x3+"&#60;div&#62;</p>"+
                           "<p>"+space.x4+"&#60;p&#62;HTML est le format de donnees concu</p>"+
-                          "<p>"+space.x5+"pour representer les pages web.&#60;/p&#62;</p>"+
+/*  3  */                 "<p>"+space.x5+"pour representer les pages web.&#60;/p&#62;</p>"+
                           "<p>"+space.x3+"&#60;/p&#62;</p>"+
                           "<p>"+space.x3+"&#60;p&#62;survolez-moi pour en savoir plus&#60;/p&#62;</p>"+
                           "<p>"+space.x2+"&#60;/a &#62;</p>"+
@@ -629,7 +636,7 @@ height: 160px;
                                  "<p class=\"explication\">"+explicationHTML[i-1]+"</p>"+
                                  "<div class=\"scroll\" id=\"textScroll"+i+"\">"+monText+"</div></div>";
     }
-//___________________________________________________________________________________SUR CLICK BUTTON JAUNE_______________
+//___________________________________________________________________________________SUR CLICK BUTTON JAUNE CSS_______________
 
     function afficheCSS(i){
       var monTextCSS = ["<p>"+color.red+"*"+color.close+
@@ -658,65 +665,188 @@ height: 160px;
                         "<p>"+space.x1+"width: "+color.orange+"400px"+color.close+";</p>"+
                         "<p>"+space.x1+"height:"+color.orange+" 300px"+color.close+";</p>"+
                         "<p>}</p>"+
+                        "<p>"+color.red+"img"+color.close+" {</p>"+
+                        "<p>"+space.x1+"width: "+color.orange+"200px"+color.close+";height: "+color.orange+"300px"+color.close+";</p>"+
+                        "<p>}</p>"+
                         "<p>"+color.red+"a"+color.close+" {</p>"+
                         "<p>"+space.x1+"width:"+color.orange+"300px"+color.close+";height:"+color.orange+"350px"+color.close+";</p>"+
                         "<p>"+space.x1+"flex-direction: row;</p>"+
                         "<p>"+space.x1+"flex-flow: row;</p>"+
                         "<p>"+space.x1+"text-align: center;</p>"+
                         "<p>"+space.x1+"text-decoration: none;</p>"+
-                        "<p>}</p>"+
-                        "<p>"+color.red+"img"+color.close+" {</p>"+
-                        "<p>"+space.x1+"width: "+color.orange+"200px"+color.close+";height: "+color.orange+"300px"+color.close+";</p>"+
                         "<p>}</p>",
 
-                        "<p>ul li a:hover{</p>"+
-                        "<p>position: absolute;</p>"+
-                        "<p>width:300px;</p>"+
-                        "<p>height:0px;</p>"+
+                        "<span style=\"color:grey\"><p>*, *:before, *:after {</p>"+
+                        "<p>"+space.x1+"padding: 0px;</p>"+
+                        "<p>"+space.x1+"margin: 0px;</p>"+
+                        "<p>"+space.x1+"box-sizing: content-box;</p>"+
                         "<p>}</p>"+
-                        "<p>ul li a div {</p>"+
-                        "<p>text-align: center;</p>"+
-                        "<p>visibility: collapse;</p>"+
-                        "<p>ul li a:hover div {</p>"+
-                        "<p>position: absolute</p>"+
-                        "<p>text-decoration: none;</p>"+
-                        "<p>border:6px solid red;</p>"+
-                        "<p>height: 200px;</p>"+
-                        "<p>width: 300px;</p>"+
-                        "<p>color:white;</p>"+
-                        "<p>background-color:black;</p>"+
-                        "<p>visibility: visible;</p>"+
+                        "<p>h2 {</p>"+
+                        "<p>"+space.x1+"color: white;</p>"+
+                        "<p>"+space.x1+"background-color: grey;</p>"+
+                        "<p>"+space.x1+"text-align: center;</p>"+
                         "<p>}</p>"+
-                        "<p>ul li a:not(:hover) p{</p>"+
-                        "<p>margin-top: -15px;</p>"+
-                        "<p>visibility: visible;</p>"+
-                        "<p>color: black;</p>"+
-                        "<p>white-space: 0px;</p>"+
+                        "<p>li {</p>"+
+                        "<p>"+space.x1+"display: inline-flex;</p>"+
+                        "<p>"+space.x1+"width: 400px;</p>"+
+                        "<p>"+space.x1+"height: 400px;</p>"+
+                        "<p>"+space.x1+"list-style:none;</p>"+
                         "<p>}</p>"+
-                        "<p>ul li a:hover p{</p>"+
-                        "<p>visibility: collapse;</p>"+
+                        "<p>li:hover {</p>"+
+                        "<p>"+space.x1+"width: 400px;</p>"+
+                        "<p>"+space.x1+"height: 300px;</p>"+
                         "<p>}</p>"+
-                        "<p>ul li a:hover img{</p>"+
-                        "<p>position: absolute;</p>"+
-                        "<p>width:100px;</p>"+
-                        "<p>height:100px;</p>"+
-                        "<p>padding-top: 100px;</p>"+
-                        "<p>z-index: 10;</p>"+
+                        "<p>img {</p>"+
+                        "<p>"+space.x1+"width: 200px;</p>"+
+                        "<p>"+space.x1+"height: 300px;</p>"+
                         "<p>}</p>"+
-                        "<p>h2 span {</p>"+
-                        "<p>visibility: collapse;</p>"+
+                        "<p>a {</p>"+
+                        "<p>"+space.x1+"width: 300px;</p>"+
+                        "<p>"+space.x1+"height: 350px;</p>"+
+                        "<p>"+space.x1+"flex-direction: row;</p>"+
+                        "<p>"+space.x1+"flex-flow: row;</p>"+
+                        "<p>"+space.x1+"text-align: center;</p>"+
+                        "<p>"+space.x1+"text-decoration: none;</p>"+
+                        "<p>}</p></span>"+
+             /* new */  "<p>"+color.red+"a"+color.close+color.orange+":hover "+color.close+"{</p>"+
+             /* new */  "<p>"+space.x1+"position: absolute;</p>"+
+             /* new */  "<p>"+space.x1+"width: "+color.orange+"300px;"+color.close+"</p>"+
+             /* new */  "<p>"+space.x1+"height: "+color.orange+"0px;"+color.close+"</p>"+
+             /* new */  "<p>}</p>"+
+             /* new */  "<p>"+color.red+"div"+color.close+" {</p>"+
+             /* new */  "<p>"+space.x1+"text-align: center;</p>"+
+             /* new */  "<p>"+space.x1+"visibility: collapse;</p>"+
+             /* new */  "<p>}</p>"+
+             /* new */  "<p>"+color.red+"a"+color.close+color.orange+":hover "+color.close+color.red+"div"+color.close+" {</p>"+
+             /* new */  "<p>"+space.x1+"position: absolute</p>"+
+             /* new */  "<p>"+space.x1+"text-decoration: none;</p>"+
+             /* new */  "<p>"+space.x1+"border: "+color.orange+"6px"+color.close+" solid "+color.orange+"red"+color.close+";</p>"+
+             /* new */  "<p>"+space.x1+"height: "+color.orange+"200px"+color.close+";</p>"+
+             /* new */  "<p>"+space.x1+"width: "+color.orange+"300px"+color.close+";</p>"+
+             /* new */  "<p>"+space.x1+"color: "+color.orange+"white"+color.close+";</p>"+
+             /* new */  "<p>"+space.x1+"background-color: "+color.orange+"black"+color.close+";</p>"+
+             /* new */  "<p>"+space.x1+"visibility: visible;</p>"+
+             /* new */  "<p>}</p>"+
+             /* new */  "<p>"+color.red+"a"+color.close+color.orange+":not"+color.close+color.violet+"("+color.close+color.orange+
+             /* new */      ":hover"+color.close+color.violet+")"+color.close+color.red+" p "+color.close+"{</p>"+
+             /* new */  "<p>"+space.x1+"margin-top: "+color.orange+"-15px"+color.close+";</p>"+
+             /* new */  "<p>"+space.x1+"visibility: visible;</p>"+
+             /* new */  "<p>"+space.x1+"color: "+color.orange+"black"+color.close+";</p>"+
+             /* new */  "<p>"+space.x1+"white-space: "+color.orange+"0px"+color.close+";</p>"+
+             /* new */  "<p>}</p>"+
+             /* new */  "<p>"+color.red+"a"+color.close+color.orange+":hover"+color.close+color.red+" p "+color.close+"{</p>"+
+             /* new */  "<p>"+space.x1+"visibility: collapse;</p>"+
+             /* new */  "<p>}</p>"+
+             /* new */  "<p>"+color.red+"a"+color.close+color.orange+":hover"+color.close+color.red+" img "+color.close+"{</p>"+
+             /* new */  "<p>"+space.x1+"position: absolute;</p>"+
+             /* new */  "<p>"+space.x1+"width: "+color.orange+"100px"+color.close+";</p>"+
+             /* new */  "<p>"+space.x1+"height: "+color.orange+"100px"+color.close+";</p>"+
+             /* new */  "<p>"+space.x1+"padding-top: "+color.orange+"100px"+color.close+";</p>"+
+             /* new */  "<p>"+space.x1+"z-index: "+color.orange+"10"+color.close+";</p>"+
+             /* new */  "<p>}</p>"+
+             /* new */  "<p>"+color.red+"span"+color.close+" {</p>"+
+             /* new */  "<p>"+space.x1+"visibility: collapse;</p>"+
+             /* new */  "<p>}</p>"+
+             /* new */  "<p>"+color.red+"h2"+color.close+color.orange+":hover "+color.close+color.red+"span"+color.close+" {</p>"+
+             /* new */  "<p>"+space.x1+"visibility: visible;</p>"+
+             /* new */  "<p>}</p>",
+
+                        "<span style=\"color:grey\"><p>*, *:before, *:after {</p>"+
+                        "<p>"+space.x1+"padding: 0px;</p>"+
+                        "<p>"+space.x1+"margin: 0px;</p>"+
+                        "<p>"+space.x1+"box-sizing: content-box;</p>"+
+                        "<p>}</p>"+
+                        "<p>h2 {</p>"+
+                        "<p>"+space.x1+"color: white;</p>"+
+                        "<p>"+space.x1+"background-color: grey;</p>"+
+                        "<p>"+space.x1+"text-align: center;</p>"+
+                        "<p>}</p>"+
+                        "<p>li {</p>"+
+                        "<p>"+space.x1+"display: inline-flex;</p>"+
+                        "<p>"+space.x1+"width: 400px;</p>"+
+                        "<p>"+space.x1+"height: 400px;</p>"+
+                        "<p>"+space.x1+"list-style:none;</p>"+
+                        "<p>}</p>"+
+                        "<p>li:hover {</p>"+
+                        "<p>"+space.x1+"width: 400px;</p>"+
+                        "<p>"+space.x1+"height: 300px;</p>"+
+                        "<p>}</p>"+
+                        "<p>img {</p>"+
+                        "<p>"+space.x1+"width: 200px;</p>"+
+                        "<p>"+space.x1+"height: 300px;</p>"+
+             /* new */  "<p>transition-property:width,height,margin,z-index,border;</p>"+
+             /* new */  "<p>transition-duration:3s;</p>"+
+                        "<p>}</p>"+
+                        "<p>a {</p>"+
+                        "<p>"+space.x1+"width: 300px;</p>"+
+                        "<p>"+space.x1+"height: 350px;</p>"+
+                        "<p>"+space.x1+"flex-direction: row;</p>"+
+                        "<p>"+space.x1+"flex-flow: row;</p>"+
+             /* new */  "<p>"+space.x1+"transition-property:width,height,margin,z-index,border;</p>"+
+             /* new */  "<p>"+space.x1+"transition-duration:3s;</p>"+
+                        "<p>"+space.x1+"text-align: center;</p>"+
+                        "<p>"+space.x1+"text-decoration: none;</p>"+
+                        "<p>}</p>"+
+                        "<p>a:hover{</p>"+
+                        "<p>"+space.x1+"position: absolute;</p>"+
+                        "<p>"+space.x1+"width:300px;</p>"+
+                        "<p>"+space.x1+"height:0px;</p>"+
+                        "<p>}</p>"+
+                        "<p>div {</p>"+
+                        "<p>"+space.x1+"text-align: center;</p>"+
+                        "<p>"+space.x1+"visibility: collapse;</p>"+
+             /* new */  "<p>"+space.x1+"position: absolute;</p>"+
+             /* new */  "<p>"+space.x1+"transition-property: width,height,margin,z-index,border;</p>"+
+             /* new */  "<p>"+space.x1+"transition-duration:3s;</p>"+
+                        "<p>}</p>"+
+                        "<p>a:hover div {</p>"+
+                        "<p>"+space.x1+"position: absolute</p>"+
+                        "<p>"+space.x1+"text-decoration: none;</p>"+
+                        "<p>"+space.x1+"border:6px solid red;</p>"+
+                        "<p>"+space.x1+"height: 200px;</p>"+
+                        "<p>"+space.x1+"width: 300px;</p>"+
+                        "<p>"+space.x1+"color:white;</p>"+
+             /* new */  "<p>"+space.x1+"transition-property: all;</p>"+
+             /* new */  "<p>"+space.x1+"transition-duration:3s;</p>"+
+                        "<p>"+space.x1+"background-color:black;</p>"+
+                        "<p>"+space.x1+"visibility: visible;</p>"+
+                        "<p>}</p>"+
+                        "<p>a:not(:hover) p{</p>"+
+                        "<p>"+space.x1+"margin-top: -15px;</p>"+
+                        "<p>"+space.x1+"visibility: visible;</p>"+
+                        "<p>"+space.x1+"color: black;</p>"+
+                        "<p>"+space.x1+"white-space: 0px;</p>"+
+                        "<p>}</p>"+
+                        "<p>a:hover p{</p>"+
+                        "<p>"+space.x1+"visibility: collapse;</p>"+
+                        "<p>}</p>"+
+                        "<p>a:hover img{</p>"+
+                        "<p>"+space.x1+"position: absolute;</p>"+
+                        "<p>"+space.x1+"width:100px;</p>"+
+                        "<p>"+space.x1+"height:100px;</p>"+
+                        "<p>"+space.x1+"padding-top: 100px;</p>"+
+                        "<p>"+space.x1+"z-index: 10;</p>"+
+             /* new */  "<p>"+space.x1+"transition-property:width,height,margin,z-index,visibility,border;</p>"+
+             /* new */  "<p>"+space.x1+"transition-duration:3s;</p>"+
+             /* new */  "<p>"+space.x1+"transition-timing-function: cubic-bezier(.6, 4, .2, 1);</p>"+
+                        "<p>}</p>"+
+                        "<p>span {</p>"+
+                        "<p>"+space.x1+"visibility: collapse;</p>"+
+             /* new */  "<p>"+space.x1+"transition-property: visibility;</p>"+
+             /* new */  "<p>"+space.x1+"transition-duration: 3s;</p>"+
+             /* new */  "<p>"+space.x1+"visibility: hidden;</p>"+
                         "<p>}</p>"+
                         "<p>h2:hover span{</p>"+
-                        "<p>visibility: visible;</p>"+
-                        "<p>}</p>",
-
-                        "blab"];
+                        "<p>"+space.x1+"visibility: visible;</p>"+
+             /* new */  "<p>"+space.x1+"transition-property:visibility;</p>"+
+             /* new */  "<p>"+space.x1+"transition-duration: 3s;</p>"+
+                        "<p>}</p></span>"];
 
 
       var monText = monTextCSS[i-1];
 
       var explicationCSS = ["Définissez les dimensions, les coloris et les positions de chaque selecteurs (de manière basique).",
-                            "blub",
+                            "Ajoutez maintenant, les styles aux nouveaux éléments HTML avec des pseudo-classes.",
                             "<a href =\"https://github.com/simplon-linap/transition/archive/master.zip\" id=\"download\">"+// -----------CHANGER LIEN DE DOWNLOAD
                             "Cliquez ici pour télécharger le dossier .zip du tuto :)</a>" ];
 
