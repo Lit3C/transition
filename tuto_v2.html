@@ -149,7 +149,6 @@
       border: 6px solid rgba(18, 7, 86, 0.9);
     }
       /*________________________________________________________SECTION 2_____*/
-    .description{font-size: 0.3em;}
     .container2 {/*______________________POSITION GHOST 2_____*/
       padding: 15% 0% 18% 0%;/*haut,bas,droite,gauche*/
     }
@@ -166,14 +165,14 @@
       margin-top: 20px;
       margin-left: 1%;
     }
-    .speak {
+    .speak {/*________________________BULLE CLIQUEZ-MOI _____*/
       width: 40%;
       height: 40%;
       margin-top: -20%;
       margin-left: 20%;
       animation: float 3s ease-out infinite;
     }
-    .clickMe{
+    .clickMe{/*_______________________TEXTE CLIQUEZ-MOI _____*/
       color:#FFF;
       font-weight: bold;
       font-size: 1.3em;
@@ -181,13 +180,12 @@
       margin-left: 23%;
       animation: float 3s ease-out infinite;
     }
-    .contour2_1, .contour2_2, .contour2_3 {/*____BULLE 2______*/
+    .contour2_1, .contour2_2, .contour2_3 {/*__ROND ETAPE_*/
       margin: 35% 0% 30% 60%;/*haut,bas,droite,gauche*/
-      padding: 3% 0% 0% 0%;
-      background-color: #FFF;
-      width: 100px;
-      height: 100px;
-      border-radius: 100px;
+      padding: 2.5% 0% 0% 0%;
+      width: 32%;
+      height: 100%;
+      border-radius: 50%;
       text-align: center;
       font-size: 4em;
       color: #3498DB;
@@ -198,26 +196,26 @@
     .contour2_2{
       margin: 35% 20% 10% 30%;
     }
-    .fond2 {
+    .fond2 {/*___________________FOND INTERIEUR ROND ETAPE___*/
       position: relative;
       background-color: #FFF;
-      width: 85px;
-      height: 85px;
-      border-radius: 85px;
-      margin: -5.5% 3.5%;
+      width: 93.5%;
+      height: 100%;
+      border-radius: 50%;
+      margin: -5.5% 10% 3.5% 3.5%;/* Pour régler dimensions*/
     }
-    .step1, .step2, .step3 {
+    .step1, .step2, .step3 {/*___________RECTANGLE GAUCHE______*/
       margin: 3% 0% 0% 25%;/*haut,bas,droite,gauche*/
       padding: 0% 0% 0% 0%;
       background-color: #FFF;
       width: 80%;
       height: 195px;
       border-radius: 8px;
-      font-size: 4em;
+      font-size: 3.5em;
       opacity: 0;
     }
     .step1{
-      margin: 10% 0% 0% 25%;/*haut,bas,droite,gauche*/
+      margin: 13% 0% 0% 25%;/*haut,bas,droite,gauche*/
     }
     .step2{
       margin: 3% 0% 0% 10%;/*haut,bas,droite,gauche*/
@@ -226,7 +224,7 @@
       position: relative;
       display:flex;
       background-color: #848484;
-      height: 30px;
+      height: 15%;
       width: 100%;
       border-radius: 8px 8px 0px 0px;
       padding-left: 3%;
@@ -234,9 +232,9 @@
     }
     .buttonHtml, .buttonCss, .buttonApercu {/*___BOUTONS STEP_____*/
       position: relative;
-      width: 15px;
-      height: 15px;
-      border-radius: 15px;
+      width: 3%;
+      height: 50%;
+      border-radius: 50%;
       border: 1px solid #848484;
       margin: 1.5% 3% 0% 0%;
 
@@ -253,18 +251,26 @@
     #contenu2_1, #contenu2_2, #contenu2_3 {
       padding: 0% 5%;
     }
-    .info {/*________________________________INFOBULLE_____*/
+    h2{
+      line-height: 60%;
+      text-align: center;
+    }
+    .description {
+      font-size: 0.3em;
+      text-align: center;
+    }
+    .info {/*__________________________INFOBULLE BUTTON ONGLET_____*/
       position: absolute;
       margin-top:23px;
       margin-left:-35px;
       padding: 10%;
       width: 60px;
-      font-size: 0.2em;
+      font-size: 0.25em;
       color:#FFF;
-      background:rgba(0,0,0,.9);
+      background:rgba(0,0,0,.8);
       padding:5px;
       border-radius:5px;
-      box-shadow:0 0 2px rgba(0,0,0,.5);
+      box-shadow:0 0 4px rgba(0,0,0,.5);
       transform:scale(0) rotate(-12deg);
       transition:all .25s;
       opacity:0;
@@ -345,7 +351,8 @@
             <button class="buttonApercu" onclick="afficheRENDU(1)"><span class="info">APERÇU</span></button>
           </div>
           <div id="contenu2_1">
-            <h2>Etape n°1 : Le Balisage</h2>
+            <h2 style="font-weight:bold;">Etape n°1</h2>
+            <h2>Définition du Balisage</h2>
             <p class="description">Cliquez sur les boutons dans la bar ci-dessus pour découvrir le code.</p>
           </div>
         </div>
@@ -356,7 +363,8 @@
             <button class="buttonApercu" onclick="afficheRENDU(2)"><span class="info">APERÇU</span></button>
           </div>
           <div id="contenu2_2">
-            <h2>Etape n°2 : Définition du style</h2>
+            <h2 style="font-weight:bold;">Etape n°2</h2>
+            <h2>Définition du Style</h2>
             <p class="description">Cliquez sur les boutons dans la bar ci-dessus pour découvrir le code.</p>
           </div>
         </div>
@@ -367,7 +375,8 @@
             <button class="buttonApercu" onclick="afficheRENDU(3)"><span class="info">APERÇU</span></button>
           </div>
           <div id="contenu2_3">
-            <h2>Etape n°3 : Définition des transitions</h2>
+            <h2 style="font-weight:bold;">Etape n°3</h2>
+            <h2>Définition des Transitions</h2>
             <p class="description">Cliquez sur les boutons dans la bar ci-dessus pour découvrir le code.</p>
           </div>
         </div>
@@ -601,7 +610,8 @@
       var explicationHTML = ["Dans votre &#60;body&#62;&#60;/body&#62;,faites une liste. Dans cette liste, créez 3 liens contenant chacun une image.",
                          "A la suite de chaque image, créez sa légende dans une div et la consigne ensuite.",
                          "<a href =\"https://github.com/simplon-linap/transition/archive/master.zip\" id=\"download\">"+// -----------CHANGER LIEN DE DOWNLOAD
-                         "Cliquez ici pour télécharger le dossier .zip du tuto :)</a>"];
+                         "Cliquez ici pour télécharger le dossier .zip du tuto.</a>"+
+                         "<p style=\"font-size:0.22em; line-height:5px\">Et pensez à l'AUTO-INDENTATION, sinon ça marche pas ;)</p>"];
 
       var monText = monTextHTML[i-1];
       codeContent[i-1].innerHTML="<div class=\"codeContent\">"+
@@ -820,8 +830,8 @@
       var explicationCSS = ["Définissez les dimensions, les coloris et les positions de chaque selecteurs (de manière basique).",
                             "Ajoutez maintenant, les styles aux nouveaux éléments HTML avec des pseudo-classes.",
                             "<a href =\"https://github.com/simplon-linap/transition/archive/master.zip\" id=\"download\">"+// -----------CHANGER LIEN DE DOWNLOAD
-                            "Cliquez ici pour télécharger le dossier .zip du tuto."+
-                            "<p style=\"font-size:0.22em; line-height:5px\">Et pensez à l'AUTO-INDENTATION, sinon ça marche pas ;)</p></a>"];
+                            "Cliquez ici pour télécharger le dossier .zip du tuto.</a>"+
+                            "<p style=\"font-size:0.22em; line-height:5px\">Et pensez à l'AUTO-INDENTATION, sinon ça marche pas ;)</p>"];
 
       codeContent[i-1].innerHTML="<div class=\"codeContent\">"+
                                  "<p class=\"explication\">"+explicationCSS[i-1]+"</p>"+
