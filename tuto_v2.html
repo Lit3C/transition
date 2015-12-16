@@ -459,28 +459,13 @@
                                        "<button class=\"button2\"onclick=\"previous3()\">précédent</button>"+
                                        "<button class="+"\"button1\""+ "onclick="+"\"previous1()\""+">retour</button>"}
 //___________________________________________________________________________________BUTTON NEXT_______________
-    function next1(){
-      contenuText.innerHTML=descriptionText.secondPart;
-
-    }
-    function next2(){
-      contenuText.innerHTML=descriptionText.thirdPart;
-    }
-    function next3(){
-      contenuText.innerHTML=descriptionText.fourthPart;
-    }
+    function next1(){ contenuText.innerHTML=descriptionText.secondPart; }
+    function next2(){ contenuText.innerHTML=descriptionText.thirdPart;  }
+    function next3(){ contenuText.innerHTML=descriptionText.fourthPart; }
 //___________________________________________________________________________________BUTTON PREVIOUS_______________
-    function previous1(){
-      contenuText.innerHTML=descriptionText.firstPart;
-    }
-
-    function previous2(){
-      contenuText.innerHTML=descriptionText.secondPart;
-
-    }
-    function previous3(){
-      contenuText.innerHTML=descriptionText.thirdPart;
-    }
+    function previous1(){ contenuText.innerHTML=descriptionText.firstPart;  }
+    function previous2(){ contenuText.innerHTML=descriptionText.secondPart; }
+    function previous3(){ contenuText.innerHTML=descriptionText.thirdPart;  }
 //___________________________________________________________________________________SUR CLICK GHOST_______________
     function afficheStep(){
       var etape1 = document.getElementById("number1");
@@ -498,11 +483,10 @@
       code3.style.opacity="1";
     }
 
+//___________________________________________________________________________________VAR CODE EDITEUR_______________
     var codeContent = [document.getElementById("contenu2_1"),
                        document.getElementById("contenu2_2"),
                        document.getElementById("contenu2_3")];
-
-
 
     var space = {x1:"&emsp;",x2:"&emsp;&emsp;", x3:"&emsp;&emsp;&emsp;", x4:"&emsp;&emsp;&emsp;&emsp;", x5:"&emsp;&emsp;&emsp;&emsp;&emsp;"};
     var color = {red :"<span style=\"color:#ED5F5F\">",
@@ -836,7 +820,8 @@
       var explicationCSS = ["Définissez les dimensions, les coloris et les positions de chaque selecteurs (de manière basique).",
                             "Ajoutez maintenant, les styles aux nouveaux éléments HTML avec des pseudo-classes.",
                             "<a href =\"https://github.com/simplon-linap/transition/archive/master.zip\" id=\"download\">"+// -----------CHANGER LIEN DE DOWNLOAD
-                            "Cliquez ici pour télécharger le dossier .zip du tuto :)</a>" ];
+                            "Cliquez ici pour télécharger le dossier .zip du tuto."+
+                            "<p style=\"font-size:0.22em; line-height:5px\">Et pensez à l'AUTO-INDENTATION, sinon ça marche pas ;)</p></a>"];
 
       codeContent[i-1].innerHTML="<div class=\"codeContent\">"+
                                  "<p class=\"explication\">"+explicationCSS[i-1]+"</p>"+
