@@ -24,7 +24,7 @@
     font-size: 1em;
     color:#FFF;
     background:rgba(0,0,0,.8);
-    padding:5px;
+    padding:0px;
     border-radius:5px;
     box-shadow:0 0 4px rgba(0,0,0,.5);
     transform:scale(0) rotate(-12deg);
@@ -37,6 +37,9 @@
     transform:scale(1) rotate(0);
     opacity:1;
   }
+  .pseudoClassTitle{background:rgba(0,0,0,1);}
+  .pseudoClassSubtitle{background:rgba(0,0,0,1);}
+  .pseudoClassContent{padding: 5px;}
   </style>
   <body>
     <div class="text1">
@@ -50,8 +53,10 @@
        <table>
         <tr>
           <td><a href="#">:link</a>
-            <span class="infoPseudoClass">permet de sélectionner les liens au sein d'autres éléments. Elle sélectionnera
-            tout lien n'ayant pas été visité.
+            <span class="infoPseudoClass"><p class="pseudoClassTitle">Pseudo-classe Dynamique<p>
+            <p class="pseudoClassSubtitle">Pseudo-classe de lien</p>
+            <p class="pseudoClassContent">permet de sélectionner les liens au sein d'autres éléments.
+            Elle sélectionnera tout lien n'ayant pas été visité.</p>
             </span>
           </td>
           <td><a href="#">:actived</a>
