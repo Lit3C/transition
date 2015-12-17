@@ -33,15 +33,18 @@
     }
     .ghost1 {/*___________________________TAILLE GHOST 1______*/
       animation: float 3s ease-out infinite;
+      -webkit-animation: float 3s ease-out infinite;
+      -moz-animation: float 3s ease-out infinite;
+      -o-animation: float 3s ease-out infinite;
       width: 60%;
       height: 60%;
     }
+/*____________________________________________ANIM GHOST 1_____*/
+    @keyframes float         { 50% {transform: translate(0, 20px);}  }
+    @-webkit-keyframes float { 50% {transform: translate(0, 20px);}  }
+    @-moz-keyframes float    { 50% {transform: translate(0, 20px);}  }
+    @-o-keyframes float      { 50% {transform: translate(0, 20px);}  }
 
-    @keyframes float {/*_____________________ANIM GHOST 1_____*/
-        50% {
-        transform: translate(0, 20px);
-      }
-    }
     .shadowFrame1 {/*______________________TAILLE OMBRE 1_____*/
       width: 45%;
       margin-top: 20px;
@@ -49,26 +52,29 @@
     }
     .shadow {
       animation: shrink 3s ease-out infinite;
+      -webkit-animation: shrink 3s ease-out infinite;
+      -moz-animation: shrink 3s ease-out infinite;
+      -o-animation: shrink 3s ease-out infinite;
       transform-origin: center center;
-      ellipse {
-          transform-origin: center center;
-      }
+      ellipse { transform-origin: center center;  }
     }
+/*____________________________________________ANIM OMBRE 1_____*/
+    @keyframes shrink        { 0%  {width:  60%;margin: 0 25%;}
+                               50% {width: 100%;margin: 0  5%;}
+                               100%{width:  60%;margin: 0 25%;}  }
 
-    @keyframes shrink {/*____________________ANIM OMBRE 1_____*/
-      0% {
-        width: 60%;
-        margin: 0 25%;
-      }
-      50% {
-        width: 100%;
-        margin: 0 5%;
-      }
-      100% {
-        width: 60%;
-        margin: 0 25%;
-      }
-    }
+    @-webkit-keyframes shrink        { 0%  {width:  60%;margin: 0 25%;}
+                               50% {width: 100%;margin: 0  5%;}
+                               100%{width:  60%;margin: 0 25%;}  }
+
+    @-moz-keyframes shrink        { 0%  {width:  60%;margin: 0 25%;}
+                               50% {width: 100%;margin: 0  5%;}
+                               100%{width:  60%;margin: 0 25%;}  }
+
+    @-o-keyframes shrink        { 0%  {width:  60%;margin: 0 25%;}
+                               50% {width: 100%;margin: 0  5%;}
+                               100%{width:  60%;margin: 0 25%;}  }
+
     .contour1 {/*_______________________________BULLE 1______*/
       margin: 8% 40%;
       background-color: transparent;
@@ -90,10 +96,10 @@
       font-weight: bold;
       padding: 1% 5%;
     }
-    .text1_1, .text1_2 {/*___________________CONTENU 1.2_____*/
+    .text1{/*___________________CONTENU 1.2_____*/
       padding: 1% 3%;
       font-size: 1em;
-      height: 160px;
+      height: 340px;
       border: 1px solid black;
     }
     #preview{
@@ -175,9 +181,9 @@
     .clickMe{/*_______________________TEXTE CLIQUEZ-MOI _____*/
       color:#FFF;
       font-weight: bold;
-      font-size: 1.3em;
-      margin-bottom: 4%;
-      margin-left: 23%;
+      width: 32%;
+      font-size: 1.2em;
+      margin: 2% 2% 0% 23%;
       animation: float 3s ease-out infinite;
     }
     .contour2_1, .contour2_2, .contour2_3 {/*__ROND ETAPE_*/
@@ -196,6 +202,8 @@
     .contour2_2{
       margin: 35% 20% 10% 30%;
     }
+    .stepActif{background-color: green;}
+    .stepActif * {color: green;}
     .fond2 {/*___________________FOND INTERIEUR ROND ETAPE___*/
       position: relative;
       background-color: #FFF;
@@ -204,6 +212,7 @@
       border-radius: 50%;
       margin: -5.5% 10% 3.5% 3.5%;/* Pour régler dimensions*/
     }
+    .fond2:hover {cursor: pointer;}
     .step1, .step2, .step3 {/*___________RECTANGLE GAUCHE______*/
       position: absolute;
       margin: 15% 0% 0% 18%;/*haut,bas,droite,gauche*/
@@ -215,7 +224,7 @@
       font-size: 3.5em;
       opacity: 0;
     }
-    .affiche{opacity: 1;}
+    .affiche{opacity: 1;z-index: 10;}/*_SUR CLICK ETAPE ROND___*/
     .onglet {
       position: relative;
       display:flex;
@@ -250,6 +259,7 @@
     h2{
       line-height: 60%;
       text-align: center;
+      margin-top: 20%;
     }
     .description {
       font-size: 0.3em;
@@ -280,9 +290,9 @@
       height: 100%;
       padding: 1.5%;
     }
-    .scroll {/*_____________________________TEXTE CODE_____*/
+    .scroll {/*_____________________________TEXTE EDITEUR_____*/
       width: 100%;
-      height: 100px;
+      height: 300px;
       overflow-y: scroll;
       overflow-x: hidden;
       font-size: 0.25em;
@@ -294,13 +304,18 @@
     .explication {/*______________________LEGENDE CODE_____*/
       font-size: 0.25em;
     }
-    #download, #download:hover{
+    embed{/*__________________________DIMENSIONS APERÇU____*/
+      width: 100%;
+      height: 500px;
+    }
+    #download {
       text-align: center;
       text-decoration: none;
       color: #373737;
     }
     #download:hover{
       color: navy;
+      font-weight: bolder;
     }
     </style>
   <body><!--***************************************************************************************
@@ -308,9 +323,9 @@
         ***************************************************************************************-->
     <section class="section1"><!--_____________________________SECTION 1_____-->
       <div class="container1">
-        <img src="ghost.png" class="ghost1">
+        <img src="images/ghost.png" class="ghost1">
         <p class="shadowFrame1">
-          <img class = "shadow" src="shadow.png">
+          <img class = "shadow" src="images/shadow.png">
         </p>
       </div>
       <div class="contour1"><!--_____BULLE 1___-->
@@ -322,16 +337,19 @@
         <div class="fond1">
           <content id="contenu">
             <p class="question">Qu'est-ce qu'une transition ?</p>
-            <p class="text1_1">Une transition est la gestion du passage d'un etat A à un etat B déclenché par une action utilisateur.
-                              C'est tout simplement le changement d'état progressif d'une propriété CSS d'un état
-                              initial vers un état final voulu. La transition permet de dymamiser visuellement un site web. La
-                              transition met en valeur les actions utilisateurs en les rendant dynamiques.
-            </p>
-            <p class="text1_1">La transition peut se rapporcher d'une transformation utilisée par la propriété "transform", qui permet
-                              de faire entre autre des rotations (mais nous en parlerons pas car peu utilisé) .La transition peut également
-                              être faite en javascript mais il est plus simple de passer avec du CSS. La transition est presque toujours
-                              déclenchée par un pseudo­class que nous vous expliquerons par la suite.
-            </p>
+            <div class="text1">
+              <p>
+                Une transition est la gestion du passage d'un etat A à un etat B déclenché par une action utilisateur.
+                C'est tout simplement le changement d'état progressif d'une propriété CSS d'un état
+                initial vers un état final voulu. La transition permet de dymamiser visuellement un site web. La
+                transition met en valeur les actions utilisateurs en les rendant dynamiques.
+              </p>
+                La transition peut se rapporcher d'une transformation utilisée par la propriété "transform", qui permet
+                de faire entre autre des rotations (mais nous en parlerons pas car peu utilisé) .La transition peut également
+                être faite en javascript mais il est plus simple de passer avec du CSS. La transition est presque toujours
+                déclenchée par un pseudo­class que nous vous expliquerons par la suite.
+              <p>
+            </div>
             <button class="button1" onclick="next1()">suivant</button>
           </content>
         </div>
@@ -401,10 +419,10 @@
         </content>
       </div>
       <div class="container2 col-md-3"><!--_____MINI-GHOST___-->
-        <p class="clickMe">Cliquez-moi !</p><img src="bulle.png" class="speak">
-        <img src="ghost.png" id="ghost2" onclick="afficheStep()">
+        <p class="clickMe" id="clickMoi">Cliquez-moi !</p><img src="images/bulle.png" class="speak">
+        <img src="images/ghost.png" id="ghost2" onclick="afficheStep()">
         <p class="shadowFrame2">
-          <img class = "shadow" src="shadow.png">
+          <img class = "shadow" src="images/shadow.png">
         </p>
       </div>
     </section><!--*************************************************************************************
@@ -414,48 +432,55 @@
 
 //___________________________________________________________________________________CONTENT TEXT BULLE_______________
     var contenuText = document.getElementById("contenu");
+    var bulleGhost = document.getElementById("clickMoi");
 
     var descriptionText = { firstPart: "<p class=\"question\">Qu'est-ce qu'une transition ?</p>"+
-                                       "<p class=\"text1_1\">Une transition est la gestion du passage d'un etat A à un etat B déclenché par une action utilisateur."+
-                                                             "C'est tout simplement le changement d'état progressif d'une propriété CSS d'un état"+
-                                                             "initial vers un état final voulu. La transition permet de dymamiser visuellement un site web. La"+
-                                                             "transition met en valeur les actions utilisateurs en les rendant dynamiques.</p>"+
-                                       "<p class=\"text1_1\">La transition peut se rapporcher d'une transformation utilisée par la propriété \"transform\", qui permet"+
-                                                             "de faire entre autre des rotations (mais nous en parlerons pas car peu utilisé) .La transition peut également"+
-                                                             "être faite en javascript mais il est plus simple de passer avec du CSS. La transition est presque toujours"+
-                                                             "déclenchée par un pseudo­class que nous vous expliquerons par la suite.</p>"+
+                                       "<div class=\"text1\">"+
+                                          "<p>Une transition est la gestion du passage d'un état A à un état B déclenché par une action utilisateur."+
+                                             "Autrement dit, le changement d'état progressif d'une propriété CSS d'un état"+
+                                             "initial vers un état final voulu.<br> La transition permet de dymamiser visuellement un site web. La"+
+                                             "transition met en valeur les actions utilisateurs en les rendant dynamiques.</p>"+
+                                          "<p>La TRANSITION peut se rapporcher d'une transformation utilisée par la propriété \"transform\", qui permet"+
+                                             "de faire entre autre des rotations (mais nous en parlerons pas car peu utilisé) .La transition peut également"+
+                                             "être faite en javascript mais il est plus simple de passer avec du CSS. La transition est presque toujours"+
+                                             "déclenchée par un pseudo­class que nous vous expliquerons par la suite.</p>"+
+                                       "</div>"+
                                        "<button class=\"button1\"onclick=\"next1()\">suivant</button>",
 
                            secondPart: "<p class=\"question\">Qu'est-ce que les \"pseudo-classes\" ?</p>"+
-                                       "<p class=\"text1_2\">Elle sont appelle comme ca car elle rappelle les class en javascript dans leurs ecrtures .les pseudo-"+
-                                                             "class sont toujours précédé d'un élement et certaine entre elles prendrent des parametres"+
-                                                             "comme :not() . Il permet de definir les propriétés de chaque etat de element choisi selon sa position"+
-                                                             "son etat.Il permet definir des particulatiés pour chaque élément .Les pseudo class écrivent avec"+
-                                                             "comme ca :element:pseudo­class.</p>"+
-                                       "<p class=\"text1_2\">Quelque exemple de pseudo­class"+
-                                                             "La pseudo class:link permet de sélectionner les liens au sein d'autres éléments. Elle sélectionnera"+
-                                                             "tout lien n'ayant pas été visité."+
-                                                             "La pseudo class:actived permet de définir l'apparence d'un élément au moment exact où"+
-                                                             "l'utilisateur clique dessus. Cela permet de donner un retour sur l'action, montrant que le navigateur"+
-                                                             "a bien compris la demande."+
-                                                             "La pseudo class:hover permet de spécifier l'apparence d'un élément au moment où l'utilisateur"+
-                                                             "passe la souris dessus, mais sans nécessairement l'activer."+
-                                                             "La pseudo class visited permet de modifier l'aspect d'un lien une fois que l'utilisateur l'a visité."+
-                                                             "La pseudo class:not() prend un sélecteur comme argument. Elle sert à exclure les éléments qui ne"+
-                                                             "sont pas concernés par le sélecteur en argument.</p>"+
+                                       "<div class=\"text1\">"+
+                                          "<p>Elle sont appelle comme ca car elle rappelle les class en javascript dans leurs ecrtures .les pseudo-"+
+                                             "class sont toujours précédé d'un élement et certaine entre elles prendrent des parametres"+
+                                             "comme :not() . Il permet de definir les propriétés de chaque etat de element choisi selon sa position"+
+                                             "son etat.Il permet definir des particulatiés pour chaque élément .Les pseudo class écrivent avec"+
+                                             "comme ca :element:pseudo­class.</p>"+
+                                          "<p>Quelque exemple de pseudo­class"+
+                                             "La pseudo class:link permet de sélectionner les liens au sein d'autres éléments. Elle sélectionnera"+
+                                             "tout lien n'ayant pas été visité."+
+                                             "La pseudo class:actived permet de définir l'apparence d'un élément au moment exact où"+
+                                             "l'utilisateur clique dessus. Cela permet de donner un retour sur l'action, montrant que le navigateur"+
+                                             "a bien compris la demande."+
+                                             "La pseudo class:hover permet de spécifier l'apparence d'un élément au moment où l'utilisateur"+
+                                             "passe la souris dessus, mais sans nécessairement l'activer."+
+                                             "La pseudo class visited permet de modifier l'aspect d'un lien une fois que l'utilisateur l'a visité."+
+                                             "La pseudo class:not() prend un sélecteur comme argument. Elle sert à exclure les éléments qui ne"+
+                                             "sont pas concernés par le sélecteur en argument.</p>"+
+                                      "</div>"+
                                        "<button class=\"button2\"onclick=\"previous1()\">précédent</button>"+
                                        "<button class="+"\"button1\""+ "onclick="+"\"next2()\""+">suivant</button>",
 
                            thirdPart : "<p class=\"question\">Comment ça fonctionne ?</p>"+
-                                       "<p class=\"text1_1\">Une transition est definie par trois propriété définir obligatoire les propriété consermé le temps de la"+
-                                                             "transition et le types de transition et undelai entre le changement état et la transition .Une transition"+
-                                                             "écrit comme :</p>"+
-                                       "<p class=\"text1_1\">Les propriété de la transition (transition­property: propriété css)"+
-                                                             "La durée (transition­duration:durée en s)"+
-                                                             "le types (transition­timing­function: types de transition)"+
-                                                             "le delai (transition­delay:durée en s)"+
-                                                             "elles peuvent etre regroupée dans une propriété transition qui écrit come ca :"+
-                                                             "transition propriété durée type delai</p>"+
+                                       "<div class=\"text1\">"+
+                                          "<p>Une transition est definie par trois propriété définir obligatoire les propriété consermé le temps de la"+
+                                             "transition et le types de transition et undelai entre le changement état et la transition .Une transition"+
+                                             "écrit comme :</p>"+
+                                          "<p>Les propriété de la transition (transition­property: propriété css)"+
+                                             "La durée (transition­duration:durée en s)"+
+                                             "le types (transition­timing­function: types de transition)"+
+                                             "le delai (transition­delay:durée en s)"+
+                                             "elles peuvent etre regroupée dans une propriété transition qui écrit come ca :"+
+                                             "transition propriété durée type delai</p>"+
+                                       "</div>"+
                                        "<button class=\"button2\"onclick=\"previous2()\">précédent</button>"+
                                        "<button class="+"\"button1\""+ "onclick="+"\"next3()\""+">suivant</button>",
 
@@ -476,16 +501,23 @@
       var etape1 = document.getElementById("number1");
       var etape2 = document.getElementById("number2");
       var etape3 = document.getElementById("number3");
+      bulleGhost.innerText="Clique sur une étape";
 
       etape1.style.opacity="1";
       etape2.style.opacity="1";
       etape3.style.opacity="1";
     }
 //___________________________________________________________________________________SUR CLICK ROND ETAPE_______________
-    function afficheBlocCode(i){
-      var code = document.getElementById("blocCode"+i);
-      console.log("function afficheBlocCode: "+i);
+    function afficheBlocCode(u){
+      var code = document.getElementById("blocCode"+u);
+      var etape = document.getElementById("number"+u);
+      var speakGhost = ["Etape 1", "Etape 2", "Etape 3"];
+
+      console.log("function afficheBlocCode: "+u);
+
       code.classList.toggle("affiche");
+      etape.classList.toggle("stepActif");
+      bulleGhost.innerText=speakGhost[u-1];
     }
 
 //___________________________________________________________________________________VAR CODE EDITEUR_______________
@@ -837,9 +869,10 @@
     }
 //___________________________________________________________________________________SUR CLICK BUTTON VERT_______________
     function afficheRENDU(i){
-      var contentEmbed = ["<embed width=\"100%\" height=\"60%\" src=\"etape1.html\"></embed>",
-                      "<embed width=\"100%\" height=\"60%\" src=\"etape2.html\"></embed>",
-                      "<embed width=\"100%\" height=\"60%\" src=\"etape3.html\"></embed>"];
+      console.log("Button APERÇU: "+i);
+      var contentEmbed = ["<embed src=\"etape1.html\"></embed>",
+                      "<embed src=\"etape2.html\"></embed>",
+                      "<embed src=\"etape3.html\"></embed>"];
       var monEmbed = contentEmbed[i-1];
       codeContent[i-1].innerHTML= monEmbed;
     }
