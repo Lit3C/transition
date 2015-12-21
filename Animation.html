@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tutoriel Animation</title>
+    <link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="MUSTACH-man-glasses-pink.png" />
+	<link rel="stylesheet" href="/css/master.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+      <link rel="stylesheet" media="screen and (max-width: 4800px)" href="smallScreenAnimation.css" />
+      <link rel="stylesheet" media="screen and (min-width: 480px) and (max-width:900px)" href="mediumScreenAnimation.css" />
+      <link rel="stylesheet" media="screen and (min-width: 800px)" href="bigScreenAnimation.css" />
+  </head><!--**************************************************************************************
+        |                                                                           CSS          |
+        *****************************************************************************************-->
+
+	<body>
+<article id='transition'>
+    <nav id='responsive'>
+      <ul id='nav_item'>
+        <li onmouseover="changeBackground('#e45550')" onmouseout="background()"><a id='4' href='Index.html'>Accueil</a></li>
+        <li onmouseover="changeBackground('#94231e')" onmouseout="background()"><a id='1' href='Animation.html'>Animations</a></li>
+        <li onmouseover="changeBackground('#91231e')" onmouseout="background()"><a id='2' href='Transition.html'>Transitions</a></li>
+        <li onmouseover="changeBackground('#fd826b')" onmouseout="background()"><a id='3' href='Annexe.html'>Annexes</a></li>
+      </ul>
+    </nav>
+
+
+				 <section class="section1"><!--_____________________________SECTION 1_____-->
+      <div class="container1">
+        <img src="images/MUSTACH-man-glasses-pink.png" class="ghost1">
+        <p class="shadowFrame1">
+          <img class = "shadow-pink" src="images/shadow-pink.png">
+        </p>
+      </div>
+      <div class="contour1"><!--_____BULLE 1___-->
+        <div id='smallBubbles'>
+          <div class="smallBulle1"></div>
+          <div class="smallBulle2"></div>
+          <div class="smallBulle3"></div>
+        </div>
+        <div class="fond1">
+          <content id="contenu">
+            <p class="question">L'animation en théorie</p>
+            <p class="text1_1">Revenons plus en détail sur la partie animation.
+              Les nouvelles possibilités  CSS3  nous permettent de jouer sur de la 2D et même de la 3D.
+              Mais également du moteur physique, pas toujours utile mais indispensable pour des effets de rebond réalistes par exemple.
+              Ces bases permettent de profiter pleinement de tout le potentiel du CSS3 !
+
+            </p>
+
+            <button class="button1" onclick="next1()">suivant</button>
+          </content>
+        </div>
+      </div>
+        <h4 id='tuto'>Pratique</h4>
+      <div id="chevrons" class="hvr-move"><a href="#ancre"><i class="fa fa-chevron-down fa-4x"></i></a></div>
+    </section>
+    </article>
+	<script>
+		var contenuText = document.getElementById("contenu");
+
+    var descriptionText = { firstPart: "<p class=\"question\" >L'animation</p>"+
+    "<p class=\"text1_1\" id=\"part1\">Revenons plus en détail sur la partie animation. Les nouvelles possibilités CSS3 nous permettent de"+
+    "jouer sur de la 2D et même de la 3D. Mais également du moteur physique, pas toujours utile mais "+
+    "indispensable pour des effets de rebond réalistes par exemple. Ces bases permettent de profiter"+
+    " pleinement de tout le potentiel du CSS3 !</p>"+
+
+
+    "<button class="+"\"button1\""+ "onclick="+"\"next1()\""+">suivant</button>",
+
+    secondPart: "<p class=\"question\">Les compatibilités</p>"+
+    "<p class=\"text1_1\" id=\"part2\"> Pour définir le bloc d’animation, on la déclare quatre fois pour respecter la compatibilité des navigateurs."+"</br>"+
+    "</br>"+
+    "</br>"+
+    "<img src=\"images/chrome-logo.png\">"+"Chrome 2.1  "+
+    "<img src=\"images/firefox-logo.png\">"+ "Firefox 5  "+
+    "<img src=\"images/opera-logo.png\">"+"Opera 12  "+
+    "<img src=\"images/ie9-logo.png\">"+"IE 10  "+
+    "<img src=\"images/safari-logo.png\">"+ "Safari 4.0  "+"</br>"+"</br>"+ "</br>"+
+    " Pour les intégrer, on utilise les syntaxes:"+
+    "</br>"+
+    "<b>"+
+    "-webkit-" +
+    "</b>"+
+    " pour Chrome et Safari "+
+
+    "</br>"+
+    "<b>"+
+    "-moz "+
+    "</b>"+
+    "pour Firefox"+
+    "</br>"+
+    "<b>"+
+    "-o- "+
+    "</b>"+
+    " pour Opera.</p>"+
+
+
+    "<button class=\"button2\"onclick=\"previous1()\">précédent</button>"+
+    "<button class="+"\"button1\""+ "onclick="+"\"next2()\""+">suivant</button>",
+
+    thirdPart : "<p class=\"question\">@keyframes</p>"+
+    "<p class=\"text1_1\" id=\"part3\">Pour manipuler le timing on fait appel aux "+
+    "<b>"+
+    "keyframes"+
+    "</b>."+
+    " Les keyframes sont des étapes clés intermédiaires d'une séquence d'animation CSS."+
+    " Elles gèrent l’animation dans le temps."+ "</br>"+
+    " Pour ceux qui ont déjà eu un logiciel de montage vidéo, flash ou même des logiciels de son entre les mains, "+
+    "cela est représenté visuellement par une timeline."+"</br>"+ "</br>"+
+    " En CSS3 les étapes clés sont gérées par des pourcentages."+"</br>"+
+    " On attribue ensuite  des propriétés comme les positions, durées, couleurs, etc."+
+    " Entre chaque étapes il y a interpolation."+ "</br>"+ "</br>"+
+    "@keyframes nomAnim{ ------------> nom défini avec animation-name"+
+    "</br>"+
+    "  0% { position } ------------> 0% c’est le début de l’animation"+ "</br>"+
+    "  30% { position } ------------> à 30% après le  début"+ "</br>"+
+    "  100% {position} ------------> 100 % c’est la fin de l’animation</p>"+
+
+
+    "<button class=\"button2\"onclick=\"previous2()\">précédent</button>"+
+    "<button class="+"\"button1\""+ "onclick="+"\"next3()\""+">suivant</button>",
+
+    fourthPart:"<p class=\"question\">Propriétés</p>"+
+    "<p class=\"text1_1\"id=\"part4\">Dans le sélecteur il y a deux propriétés obligatoires pour faire de l’animation."+
+    "</br>"+
+    "<b>"+
+    "animation-name:"+
+    "</b>"+
+    " identifie l’animation"+"</br>"+
+    "<b>"+"animation-duration:"+"</b>"+"sa durée, en Xms/ Xs"+ "</br>"+
+    "<b>"+"animation-timing-function:"+"</b>"+"courbe de vitesse (accélération, décélération, etc)."+"</br>"+
+    "On peut y définir: "+"<b>"+"ease, linear, ease-in, ease-out, ease-in-out, initial, inherit."+"</b>"+"</br>"+"</br>"+
+    "On peux aussi créer nos propres fonctions."+ "</br>"+
+
+    "<b>"+"animation-delay: "+"</b>"+"détermine quand commence l’animation,en Xms/ Xs"+"</br>"+
+    "<b>"+"animation-iteration-count: "+"</b>"+"nombre de boucles, en chiffre ou infinite"+"</br>"+
+    "<b>"+"animation-direction: "+"</b>"+"sens de lecture d'une animation"+"</br>"+
+    "<b>"+"animation-play-state: "+"</b>"+"état(en pause par exemple)."+"</br>"+
+    "</br></p>"+
+
+    "<button class=\"button2\"onclick=\"previous3()\">précédent</button>"+
+    "<button class="+"\"button1\""+ "onclick="+"\"next4()\""+">suivant</button>",
+
+
+    fifthPart:"<p class=\"question\">Syntaxes</p>"+
+    "<p class=\"text1_1\"id=\"part5\">Au niveau syntaxe, on peut lister ceux qui nous intéressent ou en version raccourcie"+
+    " tous les mettre dans la même propriété animation."+"</br>"+
+    "</br>"+
+    "En liste : "+ "</br>"+"<b>"+
+    "animation-name : monNom;" +"</br>"+
+    "animation-duration : 6s;"+"</br>"+
+    "animation-timing-function : linear;"+"</br>"+
+    "animation-play-state : paused;"+"</br>"+"</br>"+"</b>"+
+
+    "En ligne: "+"</br>"+ "<b>"+
+    "animation: monNom 6s linear paused;"+"</br>"+
+    "</br>"+"</b>"+
+    "On respecte cet ordre :"+"</br>"+
+    "<b>"+"animation : nom durée fonction délai  répétition direction état;"+"</b>"+
+    "</br>"+"</b></p>"+
+
+
+
+    "<button class=\"button2\"onclick=\"previous4()\">précédent</button>"+
+    "<button class="+"\"button1\""+ "onclick="+"\"next5()\""+">suivant</button>",
+
+
+
+    sixthPart:"<p class=\"question\">Pour finir</p>"+
+    "<p class=\"text1_1\" id=\"part6\">"+
+    "Attention : il faut mettre les préfixes webkit."+
+    " Ces propriétés ne se déclares pans dans @keyframes mais directement dans le sélecteur."+"</br>"+"</br>"+
+    "La grosse nouveauté est de pouvoir gérer la 2D et 3D via la propriété "+"<b>"+"transform."+"</b>"+
+    "</br>"+"2D: on associe "+"<b>"+"rotate , scale, skew, translate, matrix."+"</b>"+
+    "</br>"+"3D: "+ "<b>"+"translateX, Y, Z,   /  rotateX, Y, Z,   /  matrix3d"+"</b>"+
+    "<b>"+"Il y a bien d’autre propriété de transform  que l’on peux gérer tel que "+
+    "la perspective."+" </b>"+ "</br>"+
+    "</br>"+ "</br>"+"</br>"+"</br>"+
+    "Le  CSS3 est suffisamment complet aujourd’hui pour concurrencer"+
+    " l’animation JS ou même l’utilisation d’une bibliothèque Jquery. Il suffit de jeter un oeil sur "+
+    "ce qu’il se fait pour se rendre compte de l’efficacité de ces techniques."+
+    "Il existe cependant depuis peut alors que dans d’autres langages on peut le faire depuis bien longtemps.</p>"+
+
+    "<button class=\"button2\"onclick=\"previous5()\">précédent</button>"+
+    "<button class="+"\"button1\""+ "onclick="+"\"previous1()\""+">retour</button>"}
+    //___________________________________________________________________________________BUTTON NEXT_______________
+    function next1(){ contenuText.innerHTML=descriptionText.secondPart; }
+    function next2(){ contenuText.innerHTML=descriptionText.thirdPart;  }
+    function next3(){ contenuText.innerHTML=descriptionText.fourthPart; }
+    function next4(){ contenuText.innerHTML=descriptionText.fifthPart; }
+    function next5(){ contenuText.innerHTML=descriptionText.sixthPart; }
+    function next6(){ contenuText.innerHTML=descriptionText.seventhPart; }
+
+    //___________________________________________________________________________________BUTTON PREVIOUS_______________
+    function previous1(){ contenuText.innerHTML=descriptionText.firstPart;  }
+    function previous2(){ contenuText.innerHTML=descriptionText.secondPart; }
+    function previous3(){ contenuText.innerHTML=descriptionText.thirdPart;  }
+    function previous4(){ contenuText.innerHTML=descriptionText.fourthPart;  }
+    function previous5(){ contenuText.innerHTML=descriptionText.fifthPart;  }
+    function previous6(){ contenuText.innerHTML=descriptionText.sixthPart;  }
+    function previous7(){ contenuText.innerHTML=descriptionText.seventhPart;  }
+    function previous8(){ contenuText.innerHTML=descriptionText.heightPart;  }
+    function previous9(){ contenuText.innerHTML=descriptionText.ninePart;  }
+    //___________________________________________________________________________________SUR CLICK GHOST_______________
+    function afficheStep(){
+      var etape1 = document.getElementById("number1");
+      var code1 = document.getElementById("blocCode1");
+      var etape2 = document.getElementById("number2");
+      var code2 = document.getElementById("blocCode2");
+      var etape3 = document.getElementById("number3");
+      var code3 = document.getElementById("blocCode3");
+
+      etape1.style.opacity="1";
+      code1.style.opacity="1";
+      etape2.style.opacity="1";
+      code2.style.opacity="1";
+      etape3.style.opacity="1";
+      code3.style.opacity="1";
+    }
+
+    //___________________________________________________________________________________VAR CODE EDITEUR_______________
+    var codeContent = [document.getElementById("contenu2_1"),
+    document.getElementById("contenu2_2"),
+    document.getElementById("contenu2_3")];
+
+    var space = {x1:"&emsp;",x2:"&emsp;&emsp;", x3:"&emsp;&emsp;&emsp;", x4:"&emsp;&emsp;&emsp;&emsp;", x5:"&emsp;&emsp;&emsp;&emsp;&emsp;"};
+    var color = {red :"<span style=\"color:#ED5F5F\">",
+    orange:"<span style=\"color:#EEB353\">",
+    green:"<span style=\"color:#9CE98D\">",
+    blue:"<span style=\"color:#3AE6F5\">",
+    violet:"<span style=\"color:#B23ADD\">",close:"</span>"};
+    //___________________________________________________________________________________SUR CLICK BUTTON ROUGE HTML_______________
+
+    function afficheHTML(i){
+      var monTextHTML = ["<p>&#60;"+color.red+"h2"+color.close+"&#62 Languages informatiques front-ends &#60;/"+color.red+"h2"+color.close+"&#62;</p>"+
+      "<p>&#60;"+color.red+"ul"+color.close+"&#62;</p>"+
+      "<p>"+space.x1+" &#60;"+color.red+"li"+color.close+"&#62;</p>"+
+      "<p>"+space.x2+"&#60;"+color.red+"a"+color.close+color.orange+" href"+color.close+"="+color.green+"\"#\""+color.close+"&#62;</p>"+
+      "<p>"+space.x3+"&#60;"+color.red+"img"+color.close+color.orange+" src"+color.close+"="+color.green+"\"js.png\""+color.close+" &#62;</p>"+
+      "<p>"+space.x2+"&#60;/"+color.red+"a"+color.close+" &#62;</p>"+
+      "<p>"+space.x1+"&#60;/"+color.red+"li"+color.close+" &#62;</p>"+
+      /*  E  */                 "<p>"+space.x1+"&#60;"+color.red+"li"+color.close+" &#62;</p>"+
+      /*  T  */                 "<p>"+space.x2+"&#60;"+color.red+"a"+color.close+color.orange+" href"+color.close+"="+color.green+"\"#\""+color.close+"&#62;</p>"+
+      /*  A  */                 "<p>"+space.x3+"&#60;"+color.red+"img"+color.close+color.orange+" src"+color.close+"="+color.green+"\"html.png\""+color.close+" &#62;</p>"+
+      /*  P  */                 "<p>"+space.x2+"&#60;/"+color.red+"a"+color.close+" &#62;</p>"+
+      /*  E  */                 "<p>"+space.x1+"&#60;/"+color.red+"li"+color.close+" &#62;</p>"+
+      "<p>"+space.x1+"&#60;"+color.red+"li"+color.close+" &#62;</p>"+
+      /*  1  */                 "<p>"+space.x2+"&#60;"+color.red+"a"+color.close+color.orange+" href"+color.close+"="+color.green+"\"#\""+color.close+"&#62;</p>"+
+      "<p>"+space.x3+"&#60;"+color.red+"img"+color.close+color.orange+" src"+color.close+"="+color.green+"\"css3.png\""+color.close+" &#62;</p>"+
+      "<p>"+space.x2+"&#60;/"+color.red+"a"+color.close+" &#62;</p>"+
+      "<p>"+space.x1+"&#60;/"+color.red+"li"+color.close+" &#62;</p>"+
+      "<p>&#60;/"+color.red+"ul"+color.close+" &#62;</p>",
+
+      "<span style=\"color:grey\"><p>&#60;h2&#62 Languages informatiques front-ends</p></span>"+
+      "<p>"+space.x1+"&#60;"+color.red+"span"+color.close+"&#62 front-ends peut designer une interface de </p>"+
+      "<p>"+space.x1+"communication entre plusieurs applications &#60;/"+color.red+"span"+color.close+"&#62</p>"+
+      "<span style=\"color:grey\"><p>&#60;/h2&#62;</p>"+
+      "<p>&#60;ul&#62;</p>"+
+      "<p>"+space.x1+"&#60;li&#62;</p>"+
+      "<p>"+space.x2+"&#60;a href=\"#\"&#62;</p>"+
+      "<p>"+space.x3+"&#60;img src=\"js.png\"&#62;</p></span>"+
+      /* new */  "<p>"+space.x3+"&#60;"+color.red+"div"+color.close+"&#62;</p>"+
+      /* new */  "<p>"+space.x4+"&#60;"+color.red+"p"+color.close+"&#62;JavaScript est un langage de </p>"+
+      /* new */  "<p>"+space.x5+"programmation de scripts principalement</p>"+
+      /* new */  "<p>"+space.x5+"employé dans les pages web interactives</p>"+
+      /* new */  "<p>"+space.x5+"mais aussi pour les serveurs</p>"+
+      /* new */  "<p>"+space.x4+"&#60;/"+color.red+"p"+color.close+"&#62;</p>"+
+      /* new */  "<p>"+space.x3+"&#60;/"+color.red+"div"+color.close+"&#62;</p>"+
+      /* new */  "<p>"+space.x3+"&#60;"+color.red+"p"+color.close+"&#62;survolez-moi pour en savoir plus&#60;/"+color.red+"p"+color.close+"&#62;</p>"+
+      "<span style=\"color:grey\"><p>"+space.x2+"&#60;/a&#62;</p>"+
+      /*  E  */                 "<p>"+space.x1+"&#60;/li&#62;</p>"+
+      /*  T  */                 "<p>"+space.x1+"&#60;li&#62;</p>"+
+      /*  A  */                 "<p>"+space.x2+"&#60;a href=\"#\"&#62;</p>"+
+      /*  P  */                 "<p>"+space.x3+"&#60;img src=\"html.png\" &#62;</p></span>"+
+      /*  E  */      /* new */  "<p>"+space.x3+"&#60;"+color.red+"div"+color.close+"&#62;</p>"+
+      /* new */  "<p>"+space.x4+"&#60;"+color.red+"p"+color.close+"&#62;HTML est le format de donnees concu</p>"+
+      /*  2  */      /* new */  "<p>"+space.x5+"pour representer les pages web.&#60;/"+color.red+"p"+color.close+"&#62;</p>"+
+      /* new */  "<p>"+space.x3+"&#60;/"+color.red+"div"+color.close+"&#62;</p>"+
+      /* new */  "<p>"+space.x3+"&#60;"+color.red+"p"+color.close+"&#62;survolez-moi pour en savoir plus&#60;/"+color.red+"p"+color.close+"&#62;</p>"+
+      "<span style=\"color:grey\"><p>"+space.x2+"&#60;/a &#62;</p>"+
+      "<p>"+space.x1+"&#60;/li &#62;</p>"+
+      "<p>"+space.x1+"&#60;li &#62;</p>"+
+      "<p>"+space.x2+"&#60;a href=\"#\"&#62;</p>"+
+      "<p>"+space.x3+"&#60;img src=\"css3.png\" &#62;</p></span>"+
+      /* new */  "<p>"+space.x3+"&#60;"+color.red+"div"+color.close+"&#62;</p>"+
+      /* new */  "<p>"+space.x4+"&#60;"+color.red+"p"+color.close+"&#62;css3 forment un langage informatique</p>"+
+      /* new */  "<p>"+space.x5+"qui décrit la presentation des documents </p>"+
+      /* new */  "<p>"+space.x5+"HTML et XML&#60;/"+color.red+"p"+color.close+"&#62;</p>"+
+      /* new */  "<p>"+space.x3+"&#60;/"+color.red+"div"+color.close+"&#62;</p>"+
+      /* new */  "<p>"+space.x3+"&#60;"+color.red+"p"+color.close+"&#62;survolez-moi pour en savoir plus&#60;/"+color.red+"p"+color.close+"&#62;</p>"+
+      "<span style=\"color:grey\"><p>"+space.x2+"&#60;/a&#62;</p>"+
+      "<p>"+space.x1+"&#60;/li&#62;</p>"+
+      "<p>&#60;/ul&#62;</p></span>",
+
+      "<span style=\"color:grey\"><p>&#60;h2&#62 Languages informatiques front-ends</p>"+
+      "<p>"+space.x1+"&#60;span&#62 front-ends peut designer une interface de </p>"+
+      "<p>"+space.x1+"communication entre plusieurs applications &#60;/span&#62</p>"+
+      "<p>&#60;/h2&#62;</p>"+
+      "<p>&#60;ul&#62;</p>"+
+      "<p>"+space.x1+"&#60;li&#62;</p>"+
+      "<p>"+space.x2+"&#60;a href=\"#\"&#62;</p>"+
+      "<p>"+space.x3+"&#60;img src=\"js.png\"&#62;</p>"+
+      "<p>"+space.x3+"&#60;div&#62;</p>"+
+      "<p>"+space.x4+"&#60;p&#62;JavaScript est un langage de </p>"+
+      "<p>"+space.x5+"programmation de scripts principalement</p>"+
+      "<p>"+space.x5+"employé dans les pages web interactives</p>"+
+      "<p>"+space.x5+"mais aussi pour les serveurs</p>"+
+      "<p>"+space.x4+"&#60;/p&#62;</p>"+
+      "<p>"+space.x3+"&#60;/div&#62;</p>"+
+      "<p>"+space.x3+"&#60;p&#62;survolez-moi pour en savoir plus&#60;/p&#62;</p>"+
+      "<p>"+space.x2+"&#60;/a&#62;</p>"+
+      /*  E  */                 "<p>"+space.x1+"&#60;/li&#62;</p>"+
+      /*  T  */                 "<p>"+space.x1+"&#60;li&#62;</p>"+
+      /*  A  */                 "<p>"+space.x2+"&#60;a href=\"#\"&#62;</p>"+
+      /*  P  */                 "<p>"+space.x3+"&#60;img src=\"html.png\" &#62;</p>"+
+      /*  E  */                 "<p>"+space.x3+"&#60;div&#62;</p>"+
+      "<p>"+space.x4+"&#60;p&#62;HTML est le format de donnees concu</p>"+
+      /*  3  */                 "<p>"+space.x5+"pour representer les pages web.&#60;/p&#62;</p>"+
+      "<p>"+space.x3+"&#60;/p&#62;</p>"+
+      "<p>"+space.x3+"&#60;p&#62;survolez-moi pour en savoir plus&#60;/p&#62;</p>"+
+      "<p>"+space.x2+"&#60;/a &#62;</p>"+
+      "<p>"+space.x1+"&#60;/li &#62;</p>"+
+      "<p>"+space.x1+"&#60;li &#62;</p>"+
+      "<p>"+space.x2+"&#60;a href=\"#\"&#62;</p>"+
+      "<p>"+space.x3+"&#60;img src=\"css3.png\" &#62;</p>"+
+      "<p>"+space.x3+"&#60;div&#62;</p>"+
+      "<p>"+space.x4+"&#60;p&#62;css3 forment un langage informatique</p>"+
+      "<p>"+space.x5+"qui décrit la presentation des documents </p>"+
+      "<p>"+space.x5+"HTML et XML&#60;/p&#62;</p>"+
+      "<p>"+space.x3+"&#60;/div&#62;</p>"+
+      "<p>"+space.x3+"&#60;p&#62;survolez-moi pour en savoir plus&#60;/p&#62;</p>"+
+      "<p>"+space.x2+"&#60;/a&#62;</p>"+
+      "<p>"+space.x1+"&#60;/li&#62;</p>"+
+      "<p>&#60;/ul&#62;</p></span>"];
+
+      var explicationHTML = ["Dans votre &#60;body&#62;&#60;/body&#62;,faites une liste. Dans cette liste, créez 3 liens contenant chacun une image.",
+      "A la suite de chaque image, créez sa légende dans une div et la consigne ensuite.",
+      "<a href =\"https://github.com/simplon-linap/transition/archive/master.zip\" id=\"download\">"+// -----------CHANGER LIEN DE DOWNLOAD
+      "Cliquez ici pour télécharger le dossier .zip du tuto.</a>"+
+      "<p style=\"font-size:0.22em; line-height:5px\">Et pensez à l'AUTO-INDENTATION, sinon ça marche pas ;)</p>"];
+
+      var monText = monTextHTML[i-1];
+      codeContent[i-1].innerHTML="<div class=\"codeContent\">"+
+      "<p class=\"explication\">"+explicationHTML[i-1]+"</p>"+
+      "<div class=\"scroll\" id=\"textScroll"+i+"\">"+monText+"</div></div>";
+    }
+    //___________________________________________________________________________________SUR CLICK BUTTON JAUNE CSS_______________
+
+    function afficheCSS(i){
+      var monTextCSS = ["<p>"+color.red+"*"+color.close+
+      color.violet+", "+color.close+
+      color.red+"*"+color.close+
+      color.orange+":before"+color.close+
+      color.violet+", "+color.close+
+      color.red+"*"+color.close+
+      color.orange+":after"+color.close+" {</p>"+
+      "<p>"+space.x1+"padding: "+color.orange+"0px"+color.close+";</p>"+
+      "<p>"+space.x1+"margin: "+color.orange+"0px"+color.close+";</p>"+
+      "<p>"+space.x1+"box-sizing: content-box;</p>"+
+      "<p>}</p>"+
+      "<p>"+color.red+"h2"+color.close+" {</p>"+
+      "<p>"+space.x1+"color: "+color.orange+"white"+color.close+";</p>"+
+      "<p>"+space.x1+"background-color: "+color.orange+"grey"+color.close+";</p>"+
+      "<p>"+space.x1+"text-align: center;</p>"+
+      "<p>}</p>"+
+      "<p>"+color.red+"li"+color.close+" {</p>"+
+      "<p>"+space.x1+"display: inline-flex;</p>"+
+      "<p>"+space.x1+"width:"+color.orange+" 400px"+color.close+";</p>"+
+      "<p>"+space.x1+"height:"+color.orange+" 400px;"+color.close+"</p>"+
+      "<p>"+space.x1+"list-style:none;</p>"+
+      "<p>}</p>"+
+      "<p>"+color.red+"li"+color.close+color.orange+":hover"+color.close+"{</p>"+
+      "<p>"+space.x1+"width: "+color.orange+"400px"+color.close+";</p>"+
+      "<p>"+space.x1+"height:"+color.orange+" 300px"+color.close+";</p>"+
+      "<p>}</p>"+
+      "<p>"+color.red+"img"+color.close+" {</p>"+
+      "<p>"+space.x1+"width: "+color.orange+"200px"+color.close+";height: "+color.orange+"300px"+color.close+";</p>"+
+      "<p>}</p>"+
+      "<p>"+color.red+"a"+color.close+" {</p>"+
+      "<p>"+space.x1+"width:"+color.orange+"300px"+color.close+";height:"+color.orange+"350px"+color.close+";</p>"+
+      "<p>"+space.x1+"flex-direction: row;</p>"+
+      "<p>"+space.x1+"flex-flow: row;</p>"+
+      "<p>"+space.x1+"text-align: center;</p>"+
+      "<p>"+space.x1+"text-decoration: none;</p>"+
+      "<p>}</p>",
+
+      "<span style=\"color:grey\"><p>*, *:before, *:after {</p>"+
+      "<p>"+space.x1+"padding: 0px;</p>"+
+      "<p>"+space.x1+"margin: 0px;</p>"+
+      "<p>"+space.x1+"box-sizing: content-box;</p>"+
+      "<p>}</p>"+
+      "<p>h2 {</p>"+
+      "<p>"+space.x1+"color: white;</p>"+
+      "<p>"+space.x1+"background-color: grey;</p>"+
+      "<p>"+space.x1+"text-align: center;</p>"+
+      "<p>}</p>"+
+      "<p>li {</p>"+
+      "<p>"+space.x1+"display: inline-flex;</p>"+
+      "<p>"+space.x1+"width: 400px;</p>"+
+      "<p>"+space.x1+"height: 400px;</p>"+
+      "<p>"+space.x1+"list-style:none;</p>"+
+      "<p>}</p>"+
+      "<p>li:hover {</p>"+
+      "<p>"+space.x1+"width: 400px;</p>"+
+      "<p>"+space.x1+"height: 300px;</p>"+
+      "<p>}</p>"+
+      "<p>img {</p>"+
+      "<p>"+space.x1+"width: 200px;</p>"+
+      "<p>"+space.x1+"height: 300px;</p>"+
+      "<p>}</p>"+
+      "<p>a {</p>"+
+      "<p>"+space.x1+"width: 300px;</p>"+
+      "<p>"+space.x1+"height: 350px;</p>"+
+      "<p>"+space.x1+"flex-direction: row;</p>"+
+      "<p>"+space.x1+"flex-flow: row;</p>"+
+      "<p>"+space.x1+"text-align: center;</p>"+
+      "<p>"+space.x1+"text-decoration: none;</p>"+
+      "<p>}</p></span>"+
+      /* new */  "<p>"+color.red+"a"+color.close+color.orange+":hover "+color.close+"{</p>"+
+      /* new */  "<p>"+space.x1+"position: absolute;</p>"+
+      /* new */  "<p>"+space.x1+"width: "+color.orange+"300px;"+color.close+"</p>"+
+      /* new */  "<p>"+space.x1+"height: "+color.orange+"0px;"+color.close+"</p>"+
+      /* new */  "<p>}</p>"+
+      /* new */  "<p>"+color.red+"div"+color.close+" {</p>"+
+      /* new */  "<p>"+space.x1+"text-align: center;</p>"+
+      /* new */  "<p>"+space.x1+"visibility: collapse;</p>"+
+      /* new */  "<p>}</p>"+
+      /* new */  "<p>"+color.red+"a"+color.close+color.orange+":hover "+color.close+color.red+"div"+color.close+" {</p>"+
+      /* new */  "<p>"+space.x1+"position: absolute</p>"+
+      /* new */  "<p>"+space.x1+"text-decoration: none;</p>"+
+      /* new */  "<p>"+space.x1+"border: "+color.orange+"6px"+color.close+" solid "+color.orange+"red"+color.close+";</p>"+
+      /* new */  "<p>"+space.x1+"height: "+color.orange+"200px"+color.close+";</p>"+
+      /* new */  "<p>"+space.x1+"width: "+color.orange+"300px"+color.close+";</p>"+
+      /* new */  "<p>"+space.x1+"color: "+color.orange+"white"+color.close+";</p>"+
+      /* new */  "<p>"+space.x1+"background-color: "+color.orange+"black"+color.close+";</p>"+
+      /* new */  "<p>"+space.x1+"visibility: visible;</p>"+
+      /* new */  "<p>}</p>"+
+      /* new */  "<p>"+color.red+"a"+color.close+color.orange+":not"+color.close+color.violet+"("+color.close+color.orange+
+      /* new */      ":hover"+color.close+color.violet+")"+color.close+color.red+" p "+color.close+"{</p>"+
+      /* new */  "<p>"+space.x1+"margin-top: "+color.orange+"-15px"+color.close+";</p>"+
+      /* new */  "<p>"+space.x1+"visibility: visible;</p>"+
+      /* new */  "<p>"+space.x1+"color: "+color.orange+"black"+color.close+";</p>"+
+      /* new */  "<p>"+space.x1+"white-space: "+color.orange+"0px"+color.close+";</p>"+
+      /* new */  "<p>}</p>"+
+      /* new */  "<p>"+color.red+"a"+color.close+color.orange+":hover"+color.close+color.red+" p "+color.close+"{</p>"+
+      /* new */  "<p>"+space.x1+"visibility: collapse;</p>"+
+      /* new */  "<p>}</p>"+
+      /* new */  "<p>"+color.red+"a"+color.close+color.orange+":hover"+color.close+color.red+" img "+color.close+"{</p>"+
+      /* new */  "<p>"+space.x1+"position: absolute;</p>"+
+      /* new */  "<p>"+space.x1+"width: "+color.orange+"100px"+color.close+";</p>"+
+      /* new */  "<p>"+space.x1+"height: "+color.orange+"100px"+color.close+";</p>"+
+      /* new */  "<p>"+space.x1+"padding-top: "+color.orange+"100px"+color.close+";</p>"+
+      /* new */  "<p>"+space.x1+"z-index: "+color.orange+"10"+color.close+";</p>"+
+      /* new */  "<p>}</p>"+
+      /* new */  "<p>"+color.red+"span"+color.close+" {</p>"+
+      /* new */  "<p>"+space.x1+"visibility: collapse;</p>"+
+      /* new */  "<p>}</p>"+
+      /* new */  "<p>"+color.red+"h2"+color.close+color.orange+":hover "+color.close+color.red+"span"+color.close+" {</p>"+
+      /* new */  "<p>"+space.x1+"visibility: visible;</p>"+
+      /* new */  "<p>}</p>",
+
+      "<span style=\"color:grey\"><p>*, *:before, *:after {</p>"+
+      "<p>"+space.x1+"padding: 0px;</p>"+
+      "<p>"+space.x1+"margin: 0px;</p>"+
+      "<p>"+space.x1+"box-sizing: content-box;</p>"+
+      "<p>}</p>"+
+      "<p>h2 {</p>"+
+      "<p>"+space.x1+"color: white;</p>"+
+      "<p>"+space.x1+"background-color: grey;</p>"+
+      "<p>"+space.x1+"text-align: center;</p>"+
+      "<p>}</p>"+
+      "<p>li {</p>"+
+      "<p>"+space.x1+"display: inline-flex;</p>"+
+      "<p>"+space.x1+"width: 400px;</p>"+
+      "<p>"+space.x1+"height: 400px;</p>"+
+      "<p>"+space.x1+"list-style:none;</p>"+
+      "<p>}</p>"+
+      "<p>li:hover {</p>"+
+      "<p>"+space.x1+"width: 400px;</p>"+
+      "<p>"+space.x1+"height: 300px;</p>"+
+      "<p>}</p>"+
+      "<p>img {</p>"+
+      "<p>"+space.x1+"width: 200px;</p>"+
+      "<p>"+space.x1+"height: 300px;</p>"+
+      /* new */  "<p>transition-property:width,height,margin,z-index,border;</p>"+
+      /* new */  "<p>transition-duration:3s;</p>"+
+      "<p>}</p>"+
+      "<p>a {</p>"+
+      "<p>"+space.x1+"width: 300px;</p>"+
+      "<p>"+space.x1+"height: 350px;</p>"+
+      "<p>"+space.x1+"flex-direction: row;</p>"+
+      "<p>"+space.x1+"flex-flow: row;</p>"+
+      /* new */  "<p>"+space.x1+"transition-property:width,height,margin,z-index,border;</p>"+
+      /* new */  "<p>"+space.x1+"transition-duration:3s;</p>"+
+      "<p>"+space.x1+"text-align: center;</p>"+
+      "<p>"+space.x1+"text-decoration: none;</p>"+
+      "<p>}</p>"+
+      "<p>a:hover{</p>"+
+      "<p>"+space.x1+"position: absolute;</p>"+
+      "<p>"+space.x1+"width:300px;</p>"+
+      "<p>"+space.x1+"height:0px;</p>"+
+      "<p>}</p>"+
+      "<p>div {</p>"+
+      "<p>"+space.x1+"text-align: center;</p>"+
+      "<p>"+space.x1+"visibility: collapse;</p>"+
+      /* new */  "<p>"+space.x1+"position: absolute;</p>"+
+      /* new */  "<p>"+space.x1+"transition-property: width,height,margin,z-index,border;</p>"+
+      /* new */  "<p>"+space.x1+"transition-duration:3s;</p>"+
+      "<p>}</p>"+
+      "<p>a:hover div {</p>"+
+      "<p>"+space.x1+"position: absolute</p>"+
+      "<p>"+space.x1+"text-decoration: none;</p>"+
+      "<p>"+space.x1+"border:6px solid red;</p>"+
+      "<p>"+space.x1+"height: 200px;</p>"+
+      "<p>"+space.x1+"width: 300px;</p>"+
+      "<p>"+space.x1+"color:white;</p>"+
+      /* new */  "<p>"+space.x1+"transition-property: all;</p>"+
+      /* new */  "<p>"+space.x1+"transition-duration:3s;</p>"+
+      "<p>"+space.x1+"background-color:black;</p>"+
+      "<p>"+space.x1+"visibility: visible;</p>"+
+      "<p>}</p>"+
+      "<p>a:not(:hover) p{</p>"+
+      "<p>"+space.x1+"margin-top: -15px;</p>"+
+      "<p>"+space.x1+"visibility: visible;</p>"+
+      "<p>"+space.x1+"color: black;</p>"+
+      "<p>"+space.x1+"white-space: 0px;</p>"+
+      "<p>}</p>"+
+      "<p>a:hover p{</p>"+
+      "<p>"+space.x1+"visibility: collapse;</p>"+
+      "<p>}</p>"+
+      "<p>a:hover img{</p>"+
+      "<p>"+space.x1+"position: absolute;</p>"+
+      "<p>"+space.x1+"width:100px;</p>"+
+      "<p>"+space.x1+"height:100px;</p>"+
+      "<p>"+space.x1+"padding-top: 100px;</p>"+
+      "<p>"+space.x1+"z-index: 10;</p>"+
+      /* new */  "<p>"+space.x1+"transition-property:width,height,margin,z-index,visibility,border;</p>"+
+      /* new */  "<p>"+space.x1+"transition-duration:3s;</p>"+
+      /* new */  "<p>"+space.x1+"transition-timing-function: cubic-bezier(.6, 4, .2, 1);</p>"+
+      "<p>}</p>"+
+      "<p>span {</p>"+
+      "<p>"+space.x1+"visibility: collapse;</p>"+
+      /* new */  "<p>"+space.x1+"transition-property: visibility;</p>"+
+      /* new */  "<p>"+space.x1+"transition-duration: 3s;</p>"+
+      /* new */  "<p>"+space.x1+"visibility: hidden;</p>"+
+      "<p>}</p>"+
+      "<p>h2:hover span{</p>"+
+      "<p>"+space.x1+"visibility: visible;</p>"+
+      /* new */  "<p>"+space.x1+"transition-property:visibility;</p>"+
+      /* new */  "<p>"+space.x1+"transition-duration: 3s;</p>"+
+      "<p>}</p></span>"];
+
+
+      var monText = monTextCSS[i-1];
+
+      var explicationCSS = ["Définissez les dimensions, les coloris et les positions de chaque selecteurs (de manière basique).",
+      "Ajoutez maintenant, les styles aux nouveaux éléments HTML avec des pseudo-classes.",
+      "<a href =\"https://github.com/simplon-linap/transition/archive/master.zip\" id=\"download\">"+// -----------CHANGER LIEN DE DOWNLOAD
+      "Cliquez ici pour télécharger le dossier .zip du tuto.</a>"+
+      "<p style=\"font-size:0.22em; line-height:5px\">Et pensez à l'AUTO-INDENTATION, sinon ça marche pas ;)</p>"];
+
+      codeContent[i-1].innerHTML="<div class=\"codeContent\">"+
+      "<p class=\"explication\">"+explicationCSS[i-1]+"</p>"+
+      "<div class=\"scroll\" id=\"textScroll"+i+"\">"+monText+"</div></div>";
+    }
+    //___________________________________________________________________________________SUR CLICK BUTTON VERT_______________
+    function afficheRENDU(i){
+      var contentEmbed = ["<embed width=\"100%\" height=\"60%\" src=\"etape1.html\"></embed>",
+      "<embed width=\"100%\" height=\"60%\" src=\"etape2.html\"></embed>",
+      "<embed width=\"100%\" height=\"60%\" src=\"etape3.html\"></embed>"];
+      var monEmbed = contentEmbed[i-1];
+      codeContent[i-1].innerHTML= monEmbed;
+    }
+        function background(){
+            document.getElementById('responsive').style.backgroundColor = '#91231e';
+
+        }
+        function changeBackground(ev){
+                document.getElementById('responsive').style.backgroundColor = ev;
+        }
+    </script>
+	</body>
+	</html>
